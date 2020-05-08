@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>{% include head.html %}</head>
+
+<body class="page-can-tremendous page-category-can">
+    
+    {% assign can=page %}
+    {% include nav.html %}
+
+
+<div class="splash">
+
+    <div>
+        <h2 class="center coming-soon-container"><img src="/assets/tremendous/tremendous_jeepbw.png"/> <span class="coming-soon">COMING SOON</span><img src="/assets/tremendous/tremendous_raygunbw.png"/></h2>
+        <h1><div>#TREMENDOUS</div></h1>
+
+    <div>Created by Joey Mars and FAB<div></div>
+
+</div>
+</div>
+
+</body>
+</html>
