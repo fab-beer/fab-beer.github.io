@@ -1,6 +1,6 @@
 ---
 title: CANFAB200
-layout: can_copy
+layout: default
 id: canfab200
 style: main
 navbar: true
