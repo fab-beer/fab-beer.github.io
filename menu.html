@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Blog posts
-permalink: /blog/
-id: blog
-excerpt: Blog posts index
+permalink: /menu/
+id: menu
+excerpt: The menu
 ---
 
 <div class="container">
@@ -11,8 +11,8 @@ excerpt: Blog posts index
         <div class="col-md-6 offset-md-3">
             
             <h1>Blog posts:</h1>
-      {% for post in site.blog_posts %}
-    <li>{{post.date}}: <a href="{{post.link}}">{{post.title}}</a></li>
+      {% for post in site.menu %}
+    <li>{{post.Name}}: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
       {% endfor %}
 
 
