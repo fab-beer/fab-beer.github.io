@@ -11,9 +11,15 @@ excerpt: The menu
         <div class="col-md-6 offset-md-3">
             
             <h1>Menu Items:</h1>
-      {% for post in site.food_menu %}
-    <li>{{post.Name}}: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
+<ul>
+      {% assign groups = site.food_menu | group_by: "Type" %}
+    {% for g in groups %}
+    {% for post in g.items %} 
+    HI
+    <li><span class="name">{{post.Name}}</span>: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
       {% endfor %}
+    {% endfor %}
+            </ul>
 
 
     </div>
