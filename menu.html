@@ -1,1 +1,21 @@
-This is the menu
+---
+layout: default
+title: Blog posts
+permalink: /blog/
+id: blog
+excerpt: Blog posts index
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            
+            <h1>Blog posts:</h1>
+      {% for post in site.blog_posts %}
+    <li>{{post.date}}: <a href="{{post.link}}">{{post.title}}</a></li>
+      {% endfor %}
+
+
+    </div>
+</div>
+</div>
