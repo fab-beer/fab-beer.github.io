@@ -1,10 +1,12 @@
 ---
 layout: default
 title: Menu page
-permalink: /menu/
+permalink: /menu-printable/
 id: food-menu
 excerpt: The menu
 ---
+
+
 
 <div class="container">
     <div class="row">
@@ -24,6 +26,30 @@ excerpt: The menu
 
 
     </div>
+
+  <div class="col-3">
+    <div>Apps</div>
+      {% for post in site.data.food_menu %} 
+        {% if post.Type == "App" %}
+      <li><span class="name">{{post.Name}}</span>: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
+        {% endif %}
+      {% endfor %}
+              </ul>
+  
+  
+      </div>
+
+  <div class="col-3">
+    <div>Apps</div>
+      {% for post in site.data.food_menu %} 
+        {% if post.Type == "App" %}
+      <li><span class="name">{{post.Name}}</span>: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
+        {% endif %}
+      {% endfor %}
+              </ul>
+  
+  
+      </div>
 </div>
 </div>
 </div>
