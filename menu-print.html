@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blank
 title: Menu page
 permalink: /menu-printable/
 id: food-menu
@@ -7,43 +7,124 @@ excerpt: The menu
 ---
 
 
+<style>
+  body{
+    font-size:12px;
+  }
+  .qr{
+    position:absolute;
+    left:9in;
+    top:0in;
+    margin:32px;
+  }
+  .qr img{
+    width:96px;
+    height:96px;
+  }
+  .name{
+    font-weight:bold;
+  }
+  .price,.togo{
+    padding-left:1em;
+    float:right;
+  }
+  .food-container{
+    font-size:110%;
+  }
+  .qr-address{
+    font-family:courier;
+    font-size:90%;
+  }
+  .style-desc{
+    font-style:italic;
+  }
+  .notes{
+    display:block;
+  }
 
+@page {
+  size: 11in 8.5in;
+}
+.spacer{
+  height:.7in;
+}
+</style>
+
+<div class="spacer"></div>
+<div class="qr">
+  <img src="/assets/qr-menu.svg" />
+  <div class="qr-address">[fab.beer/menu]</div>
+</div>
 <div class="container">
+   <h2>FOOD ART BEER</h2>  
+    <h4>9/10/2020</h4>
+    <h6>Ask about our art tours!</h6>
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            
-            <h1>Menu Items:</h1>
-<ul>
 
-  <div class="col-3">
-  <div>Apps</div>
+
+      
+  <div class = "row">
+
+
+
+  <div class="col-5 food-container">
+  <div>Food</div> 
+  <ul>
+
     {% for post in site.data.food_menu %} 
-      {% if post.Type == "App" %}
-    <li><span class="name">{{post.Name}}</span>: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
+      {% if post.Type == "App"  or post.Type=="Main" %}
+    <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li>
       {% endif %}
     {% endfor %}
             </ul>
 
 
+            <!-- <div>Mains</div> -->
+            <!-- <ul>
+        
+              {% for post in site.data.food_menu %} 
+                {% if post.Type == "Main" %}
+                <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span></span><span class="notes">{{post.Notes}}</span></li>
+                {% endif %}
+              {% endfor %}
+                      </ul> -->
+
+                      <div>Desert</div>
+                      <ul>
+                  
+                        {% for post in site.data.food_menu %} 
+                          {% if post.Type == "Desert" %}
+                          <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li>
+                          {% endif %}
+                        {% endfor %}
+                                </ul>
+
+
+                      <div>House Wines</div>
+                      <div>From the Loire Valley</div>
+                      <ul>
+                  
+                        {% for post in site.data.food_menu %} 
+                          {% if post.Type == "Wine" %}
+                          <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li>
+                          {% endif %}
+                        {% endfor %}
+                                </ul>
+                    
+          
+
     </div>
 
-  <div class="col-3">
-    <div>Apps</div>
-      {% for post in site.data.food_menu %} 
-        {% if post.Type == "App" %}
-      <li><span class="name">{{post.Name}}</span>: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
-        {% endif %}
-      {% endfor %}
-              </ul>
-  
-  
-      </div>
 
-  <div class="col-3">
-    <div>Apps</div>
+
+  <div class="col-6">
+    <div>Beer</div>
+    <div>Brewed by <b>FAB</b>!</div>
+    <ul>
+
       {% for post in site.data.food_menu %} 
-        {% if post.Type == "App" %}
-      <li><span class="name">{{post.Name}}</span>: <a href="{{post.Type}}">{{post.Type}}</a>{{post.Price}} {{post.Notes}}</li>
+        {% if post.Type == "Beer" and post.Available == "Yes" %}
+        <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><div class="style-desc"> {{post.Style}} {{post.ABV}}%</div><span class="notes">{{post.Notes}}</span></li>
         {% endif %}
       {% endfor %}
               </ul>
