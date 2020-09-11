@@ -13,7 +13,7 @@ excerpt: The menu
   }
   .qr{
     position:absolute;
-    left:9in;
+    left:8in;
     top:0in;
     margin:32px;
   }
@@ -46,18 +46,18 @@ excerpt: The menu
   size: 11in 8.5in;
 }
 .spacer{
-  height:.7in;
+  height:.3in;
 }
 </style>
 
 <div class="spacer"></div>
 <div class="qr">
-  <img src="/assets/qr-menu.svg" />
-  <div class="qr-address">[fab.beer/menu]</div>
+  We FAB, "Food Art Beer", a community-focused food and art-space created by FAB brewery. All of the beers on the menu are brewed by us!
+  Follow us @fabsomerville @fabcans
 </div>
 <div class="container">
    <h2>FOOD ART BEER</h2>  
-    <h4>9/10/2020</h4>
+    <h4>9/11/2020</h4>
     <h6>Ask about our art tours!</h6>
     <div class="row">
 
@@ -79,16 +79,6 @@ excerpt: The menu
             </ul>
 
 
-            <!-- <div>Mains</div> -->
-            <!-- <ul>
-        
-              {% for post in site.data.food_menu %} 
-                {% if post.Type == "Main" %}
-                <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span></span><span class="notes">{{post.Notes}}</span></li>
-                {% endif %}
-              {% endfor %}
-                      </ul> -->
-
                       <div>Desert</div>
                       <ul>
                   
@@ -101,12 +91,12 @@ excerpt: The menu
 
 
                       <div>House Wines</div>
-                      <div>From the Loire Valley</div>
+                      <div>Ask about our selection of wines from the Loire Valley</div>
                       <ul>
                   
                         {% for post in site.data.food_menu %} 
                           {% if post.Type == "Wine" %}
-                          <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li>
+                          <!-- <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li> -->
                           {% endif %}
                         {% endfor %}
                                 </ul>
