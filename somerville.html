@@ -7,20 +7,100 @@ navbar: true
 ---
 
 
+<style>
+    body{
+    
+    }
+    .page-hero{
+        height:80vh;
+    }
+    .page-nav{
+        height:10vh;
+    }
+    .banner-text{
+        position:relative;
+        margin-top:20vh;
+        text-align:center;
+        left:50%;
+        width:fit-content;
+    
+    transform: translate(-50%, 0px);        
+    font-weight:bold;
+    }
+    .page-new{
+        font-size:30%;
+        position:absolute;
+        right:0px;
+        margin-right:-10px;
+        margin-top:-20px;
+        font-size:50%;
+        background-color:red;
+        color:white;
+    }
+    .l1{
+        font-size:800%;
+        line-height:.8em;
+    }
+    .l2{
+        font-size:200%;
+    }
+    .l3{
+        font-size:100%;
+    }
+
+        .page-nav .item{display:inline-block;
+        margin-left:2em; margin-right:2em;
+    }
+    .page-nav{ display:flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+    @media screen and (min-width: 601px) {
+ .banner-text{
+     font-size:2em;
+ }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  div.example {
+    font-size:2vw;
+  }
+}
+    
+</style>
 <div class="container">
 
-    <br/><br/>
-<div class="row"><div class="col-md-6 offset-md-3 valentines banner">
-    <div><h3>NOW OPENING!</h3></div>
-        <span class="fancy trem-text">FAB Somerville</a> 
-        <div>Click for today's <a href="/menu-printable">menu</a></div>
 
+
+<div class="page-hero">
+    <div class="banner-text">
+        <div class="page-new">NEW</div>
+<div class="l1">FAB</div>
+<div class="l2">* SOMERVILLE *</div>
+<div class="l3">Welcome to FOOD ART BEER!</div>
 </div>
+</div>
+<div class="page-nav">
+    <span class="item"><a href="/menu-printable">Menu</a></span><span class="item"><a href="#getting-here">Getting Here</a></span><span class="item"><a href="#bulletin-board">Bulletin Board</a></span>
+</div>
+<div class="row">
+    <div id="bulletin-board" class="section-header">Menu</div>
+</div>
+
+<div class="row">
+    <div id="bulletin-board" class="section-header">Getting Here</div>
+    Our hours are 5:30-9PM THU - SAT.
+    Visit us at 118 Beacon St Somerville
 </div>
 
 <br/><br/>
 <div class="row">
-<div class="col-md-6 offset-md-3 main-text">
+    <div id="bulletin-board" class="section-header">Bulletin Board</div>
+<div class="col-md-6 offset-md-3">
     <h4>THANK YOU</h4> 9/10/2020--we're open! Hello to our community! Hello to our friends!
     <br/>
     Everyone, we are so excited to be opening our doors at 118 Beacon Street, bringing you <span class="fresh">FOOD ART BEER</span>,
