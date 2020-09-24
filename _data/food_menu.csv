@@ -2,23 +2,25 @@
 Tomato Toast,Tomato Toast,"Virgilios Bread, Lardo, Marinated Red Onion, Charred Herbs",App,,Yes,,12,,,
 Chickpea Fritters,Chickpea Fritters,Romesco sauce ,App,,Yes,,10,,,
 Grilled Zucchini Carpaccio,Grilled Zucchini Carpaccio,"Housemade Ricotta, Blackberries, Mushroom Conserva, Fennel Pollen",App,,Yes,,13,,,
-Mussels,Mussels,"Fregola Saffron Brodo, Egg, Castelvetrano Olives, Crostini",Main,,Yes,,15,,,
+Mussels,Mussels,"Fregola, Saffron Brodo, Egg, Castelvetrano Olives, Crostini",Main,,Yes,,15,,,
 Green Bean Crab Salad,Green Bean Crab Salad,"Nauc Cham, Peanuts, Scallion, Roasted Garlic Aioli",Main,,Yes,,14,,,
 Little Gem Salad,Little Gem Salad,"Shiitakes, Scallion, Radish, Cucumber, Carrot Maggi Vinaigrette",Main,,Yes,,12,,,
 FAB Cheese Burger,FAB Cheese Burger,"BLT, Onion, Special Sauce, Fries",Main,,Yes,,13,,,
 Seared Salmon Goujouette,Seared Salmon Goujouette,"Scalloped Kohlrabi, Everything Bagel Spice, Red Onion, Vinaigrette",Main,,Yes,,23,14,,
 Roasted Pork Shoulder,Roasted Pork Shoulder,"Romaine Gnocchi, Salsa Verde, Avocado",Main,,Yes,,25,15,,
-Grilled Cornish Hen,Grilled Cornish Hen,"Bacon Lardons, Corn Pudding, Stewed Peppers and Tomatoes",Main,,Yes,,24,13,,
+Dry-Aged Cornish Hen,Dry-Aged Cornish Hen,"Bacon Lardons, Corn Pudding, Stewed Peppers, Tomatoes",Main,,Yes,,24,13,,
 Grilled Peaches,Grilled Peaches,"Mascarpone Mousse, Smoked Honey",Desert,,Yes,,9,,,
 Tales of the Mosaic Marvel,Tales of the Mosaic Marvel,"Lemon and peach gummies with over-ripe strawberry aroma. Near purple drink notes are prominent. Honey nut cheerios malt aroma. Yeast esters underline and melds with Mosaic’s fruit candy notes. Medium body, with fruit-cocktail flavors. Tangy fruitiness lingers with little to no bitterness.",Beer,1-hop IPA,Yes,7.5,9,,,16
 Johnny Get Your Raygun,Johnny Get Your Raygun,"Classic citra/mosaic aroma. Juicy fruit gum, orange and red grapefruit with a hint of creamsicle. Mango juice flavor, with pleasantly bitter citrus. Hints of berry and lemongrass. Full, juicy body with a hazy-texture, drying finish.",Beer,Double NEIPA,Yes,9,9,,,18
 Atlantis Will Prevail,Atlantis Will Prevail,"Funky aromas. Farmhouse ale yeast notes. Tang and haze. Bouquet of tangerine and grapefruit aroma. Light for 9%. Lemon peel & orange aromas. Hop-forward crisp and refreshing. Double IPA for a summer day's picnic. Hazy, not heavy. Creamsicle aroma. Pineapple finish.",Beer,Nordic Double IPA,Yes,9,9,,,
+[aged] Squid Pro Quo,[aged] Squid Pro Quo,"[FAB Batch 001 can-aged, 9 months]. Classic. Caramel, biscuit, raisin notes.  West Coast style. Bio-transformed with Chico yeast and New England-style dry hop timing.",Beer,West Coast 2xIPA,No,8,10,,,
 FAB 200,FAB 200,"Wildy juicy. Lemon-like and tropical aroma, bordering on shandy. Very bright. Never too sweet or sour from the fruit additions of lemon and mango. Soft, full body finishes with slight acidity and gentle bitterness.",Beer,Fruited IPA,No,7.5,10,,,20
-FAB Shoggoth 2020,FAB Shoggoth 2020,"Strawberry banana, juicy fruit esters. Smells a little like a milkshake IPA. Sweet vanilla spice flavor. Creamy and thick. Deep blood orange develops after creamsicle pineapple. Not boozy, but slowly warms the throat. Graham cracker finish. Extremely smooth for ABV.",Beer,Triple NEIPA,No,13,13,,,24
+FAB Shoggoth 2020,FAB Shoggoth 2020,"Strawberry banana, juicy fruit esters. Smells a little like a milkshake IPA. Sweet vanilla spice flavor. Creamy and thick. Deep blood orange develops after creamsicle pineapple. Not boozy, but slowly warms the throat. Graham cracker finish. Extremely smooth for ABV.",Beer,Triple NEIPA,Yes,13,13,,,24
 Pilsner 4 Peace,Pilsner 4 Peace,"Nilla wafer pilsner-malt upfront with minerally lager aroma on edges. Extremely clean tasting with slight citrus component, without herbaceousness one might expect from the hops. This one “goes down easy”.",Beer,Pilsner,Yes,5,7,,,14
 Electric Plankton Surf Club,Electric Plankton Surf Club,"Bright aromas of lemon oil and water crackers. Dry and light-bodied, but with substantial juiciness that dissolves slowly into prickly citrus spice.",Beer,India Session Ale,Yes,4.5,7,,,14
 House White,House White,Les Houx. Muscadet sevre et main,Wine,,Yes,,12,,48,
 House Bubbly,House Bubbly,Vouvray Brut.  Methode traditonnelle,Wine,,Yes,,12,,48,
 Chilled Red,Chilled Red,"Valencay. Gamay, Cor and Pinot Noir grapes",Wine,,Yes,,12,,48,
 House Red,House Red,2017 Beaurenard Rasteau. Grenache and Sirah Grapes,Wine,,Yes,,12,,48,
-Sangria,Sangria,Warm Spice and Peaches,Wine,,,,,,,
+Sangria,Sangria,Warm Spice and Peaches,Wine,,Yes,,,,,
+,,,,,,,,,,

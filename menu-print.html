@@ -29,7 +29,7 @@ excerpt: The menu
     float:right;
   }
   .food-container{
-    font-size:110%;
+    font-size:100%;
   }
   .qr-address{
     font-family:courier;
@@ -56,11 +56,11 @@ excerpt: The menu
 <div class="spacer"></div>
 <div class="qr">
   We are <b>FAB</b>, "Food Art Beer", a community-focused food and art-space created by FAB brewery. All of the beers on the menu are brewed by us!
-  Follow us @fabsomerville @fabcans
+ <br/>--@fabsomerville
 </div>
 <div class="container">
    <h2>FOOD ART BEER</h2>  
-    <h4>9/18/2020</h4>
+    <h4>9/24/2020</h4>
     <h6>Ask about our art tours!</h6>
     <div class="row">
 
@@ -92,9 +92,11 @@ excerpt: The menu
                         {% endfor %}
                                 </ul>
 
+                                <div  class="section-name">House Wines</div>
 
-                 
-      
+                                <div>Ask about our selection of wines from the Loire Valley!</div>
+                                <div>TONIGHT: <b>Red Wine Sangria</b> with peaches and warm spice.</div>
+                            
           
 
     </div>
@@ -113,16 +115,6 @@ excerpt: The menu
       {% endfor %}
     </ul>
       
-      <div class="section-name">House Wines</div>
-      <div>Ask about our selection of wines from the Loire Valley</div>
-      <div>TONIGHT: <b>Red Wine Sangria</b> with peaches and warm spice.</div>
-      <ul>
-      {% for post in site.data.food_menu %} 
-      {% if post.Type == "Wine" %}
-      <!-- <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li> -->
-      {% endif %}
-    {% endfor %}
-              </ul>
   
   
       </div>
