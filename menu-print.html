@@ -8,13 +8,20 @@ excerpt: The menu
 
 
 <style>
-  body{
-    font-size:12px;
+  body{  
+    width: 8.5in;
+    font-size:16px;
+  }
+  body .page{
+
+    height:11in;
+    position:relative;
   }
   .qr{
     position:absolute;
-    left:8in;
+    right:0in;
     top:0in;
+    width:3in;
     margin:32px;
   }
   .qr img{
@@ -29,7 +36,7 @@ excerpt: The menu
     float:right;
   }
   .food-container{
-    font-size:110%;
+    font-size:100%;
   }
   .qr-address{
     font-family:courier;
@@ -38,94 +45,142 @@ excerpt: The menu
   .style-desc{
     font-style:italic;
   }
+  .section-header{
+    padding-top:4em;
+
+  }
   .section-name{
     font-weight:bold;
+    font-size:140%;
+  }
+  .item{
+    padding-top:.5em;
   }
   .notes{
     display:block;
   }
-
-@page {
-  size: 11in 8.5in;
+  .allergen-warning{
+    /* position: */
+  }
+  .beer-page{
+    page-break-before : always ;
+  }
+  .beer-footer{
+    padding-top:2.5em;
+  }
+  .beer-footer .beer{
+    padding-left:2em;
+    display:inline;
 }
-.spacer{
-  height:.3in;
+.float-right{
+  float:right;
 }
+  @media print{
+    .page{   page-break-before: always;}
+  }
+  
+  @page {
+    size: 8.5in 11in;
+  }
+  .spacer{
+    height:.3in;
+  }
 </style>
 
+<script>
+  $(()=>{
+    var d = new Date()
+    $(".date-content").text(`${d.getMonth()+1}/${d.getDate()}/${d.getFullYear()}`)})
+</script>
+
+<div class="page">
 <div class="spacer"></div>
 <div class="qr">
-  We are <b>FAB</b>, "Food Art Beer", a community-focused food and art-space created by FAB brewery. All of the beers on the menu are brewed by us!
-  Follow us @fabsomerville @fabcans
+  We are <b>FAB</b>, "Food Art Beer", a community-focused food and art-space created by FAB brewery. All of the beers on the menu are brewed by us! <b>--@fabsomerville</b>
+  <br/>
 </div>
 <div class="container">
-   <h2>FOOD ART BEER</h2>  
-    <h4>9/18/2020</h4>
-    <h6>Ask about our art tours!</h6>
-    <div class="row">
-
-
-      
-  <div class = "row">
-
-
-
-  <div class="col-5 food-container">
-  <div  class="section-name">Food</div> 
-  <ul>
-
-    {% for post in site.data.food_menu %} 
-      {% if post.Type == "App"  or post.Type=="Main" %}
-    <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}{% if post.HalfPrice !=None %} ({{post.HalfPrice}}){% endif %}</span><span class="notes">{{post.Notes}}</span></li>
-      {% endif %}
-    {% endfor %}
-            </ul>
-
-
-                      <div class="section-name">Desert</div>
-                      <ul>
-                  
-                        {% for post in site.data.food_menu %} 
-                          {% if post.Type == "Desert" %}
-                          <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li>
-                          {% endif %}
-                        {% endfor %}
-                                </ul>
-
-
-                 
-      
-          
-
-    </div>
-
-
-
-  <div class="col-6">
-    <div  class="section-name">Beer</div>
-    <div>Brewed by <b>FAB</b>!</div>
-    <ul>
-
-      {% for post in site.data.food_menu %} 
-        {% if post.Type == "Beer" and post.Available == "Yes" %}
-        <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><div class="style-desc"> {{post.Style}} {{post.ABV}}%</div><span class="notes">{{post.Notes}}</span></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-      
-      <div class="section-name">House Wines</div>
-      <div>Ask about our selection of wines from the Loire Valley</div>
-      <div>TONIGHT: <b>Red Wine Sangria</b> with peaches and warm spice.</div>
+  <h2>FOOD ART BEER</h2>  
+  <h4 class="date-content"></h4>
+  <div class="row">
+    
+    
+    
+    
+    <div class="offset-1 col-10 food-container">
+      <div  class="section-header"><span class="section-name">Food</span> <span class="float-right">[...flip for BEER]</span></div> 
       <ul>
-      {% for post in site.data.food_menu %} 
-      {% if post.Type == "Wine" %}
-      <!-- <li><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li> -->
-      {% endif %}
-    {% endfor %}
-              </ul>
-  
-  
-      </div>
+        
+        {% for post in site.data.food_menu %} 
+        {% if  post.Type == "App"  or post.Type=="Main"  and post.Available == "Yes" %}
+        <li class="item"><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}{% if post.HalfPrice !=None %} ({{post.HalfPrice}}){% endif %}</span><span class="notes">{{post.Notes}}</span></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      
+      
+      <b>Desert</b>
+      <ul>
+        
+        {% for post in site.data.food_menu %} 
+        {% if post.Type == "Desert" %}
+        <li class="item"><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><span class="notes">{{post.Notes}}</span></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      
+      
+      <br/>
+      <div><b>Allergy warning:</b> please inform your server if you have a food allergy!</div>
+      <div></div>
+      
+<div class="beer-footer">
+ <span class="header">BEERS IN CANS:</span>
+  {% for post in site.data.food_menu %} 
+  {% if post.Type == "Beer" and post.Available == "Yes" %}<span class="item"><b>{{post.Names}},</b></span>
+  {% endif %}
+  {% endfor %}
+  <span>... brewed by FAB in Dorchester</span>
+    <div>Available in 4-packs to go!</div>
+  <div>Beer stories on the back!</div>
 </div>
+      
+    </div>
+  </div>
+</div>
+<div class="page">
+
+  <div class="container">
+    <h2>FOOD ART BEER</h2>  
+    <h4 class="date-content"></h4>
+    <div class="row">
+      
+    <div class="beer-page">
+      <div class="offset-1 col-10">
+        <div  class="section-header"><span class="section-name">Beer</span> <span class="float-right">[...flip for Food]</span></div>
+        <div>Brewed by <b>FAB</b>!</div>
+        <ul>
+          
+          {% for post in site.data.food_menu %} 
+          {% if post.Type == "Beer" and post.Available == "Yes" %}
+          <li class="item"><span class="name">{{post.Names}}</span><span class="price">{{post.Price}}</span><div class="style-desc"> {{post.Style}} {{post.ABV}}%</div><span class="notes">{{post.Notes}}</span></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        
+        <p ><div class="section-name">House Wines</div> In addition to our beer selection, ask us about our selection of house wines, including our <b>house white</b>, <b>house red</b>, <b>house rose</b>, <b>house bubbly</b>.</p>
+        <p>🍷 Glasses of wine are $12. </p>
+        <p>🍾 Bottles available for $48.</p>
+        <p>Tonight: <b>Sangria</b>! $9 / glass.</p>
+          <!-- {% for post in site.data.food_menu %} 
+          {% if post.Type == "Wine" and post.Available == "Yes" %}
+          <li class="item"><b>{{post.Names}}</b><span class="">{{post.Notes}}</span></li>
+          {% endif %}
+          {% endfor %} -->
+        </div>        
+      </div>
+      
+    </div>
+  </div>
 </div>
 </div>
