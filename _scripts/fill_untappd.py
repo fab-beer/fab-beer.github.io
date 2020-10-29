@@ -131,6 +131,8 @@ def attach_venues():
 
     #alternate formulation, pullls from a downloaded HTML file
     #d = pq(filename="FAB 10-days.html")
+    #d = pq(filename="FAB_checkins_2.html")
+
     all_checkins = [e for e in d(".item") if pq(e).attr("data-checkin-id") is not None]
     meta = [ {"checkin":pq(e).attr("data-checkin-id"),
     "purchased": pq(e)(".purchased a").attr("href")} for e in all_checkins]
