@@ -12,6 +12,7 @@ import sqlite3
 import requests
 import calendar
 from dateutil import parser as dateparser
+from requests.exceptions import HTTPError
 
 
 def fillforward():
@@ -45,47 +46,55 @@ def fillforward():
     params = {
         'client_id'     : api_id,
         'client_secret' : api_secret,
-        'limit'         : 10,
     }
 
 
     c.execute('select max(cid) from checkins')
     row = c.fetchone()
-    
     if row and row[0]:
-        params['min_id'] = row[0]
+        existing_max_id = row[0]
     else:
-        params['min_id'] = 0
+        0
 
 
-    print(row)
-    if 'min_id' in params:
-         del params['min_id']
-    params["min_id"] = 955344090
+    # print(row)
+    # if 'min_id' in params:
+    #      del params['min_id']
+    # params["min_id"] = 955494202
     
     #print(params["min_id"])
 
     while True:
         print(params)
         print("REPEATING")
-        r = requests.get(url, params=params)
+
+        try:
+            r = requests.get(url, params=params)
+            r.raise_for_status()
+
+        except HTTPError:
+            break
+
         
 
-        r.raise_for_status()
         response = r.json()['response']
         checkins = response['checkins']
         print(len(checkins))
         max_id = None
         #print(checkins)
+        print(f'N checks: {len(checkins)}')
         for checkin in checkins['items']:
-            #print (checkin)
+            # #print (checkin)
             cid = checkin['checkin_id']
-            if cid == params['min_id']:
-                continue
-            elif cid < params['min_id']:
-                print('wtf, queried for min_id', params['min_id'], 'and got', cid)
-                continue
-            if not max_id or cid > max_id: max_id = cid
+            # if cid == params['min_id']:
+            #     continue
+            # elif cid < params['min_id']:
+            #     print('wtf, queried for min_id', params['min_id'], 'and got', cid)
+            #     continue
+            # if not max_id or cid > max_id: max_id = cid
+
+            if max_id is None or cid < max_id:
+                max_id = cid
 
             when_utc = dateparser.parse(checkin['created_at'])
             timestamp = calendar.timegm(when_utc.timetuple())
@@ -99,13 +108,18 @@ def fillforward():
             #print(cid, when, beer.encode('utf8'), venue.encode('utf8'))
             c.execute('INSERT OR REPLACE INTO checkins(cid, timestamp, beer, venue, json,purchased) values (?, ?, ?, ?, ?,?)', \
                       (cid, timestamp, beer, venue, checkin_json,purchased))
+
         print(len(checkins['items']))
+
+
         if max_id is None:
             print("QUITTING")
             break
         #print("COMMITTING")
         conn.commit()
-        params['min_id'] = max_id-1
+        params['max_id'] = max_id
+        if max_id < existing_max_id:
+            break
     conn.commit()
 
 
@@ -116,7 +130,9 @@ def attach_venues():
     d = pq(webContent)
 
     #alternate formulation, pullls from a downloaded HTML file
-    d = pq(filename="FAB 10-days.html")
+    #d = pq(filename="FAB 10-days.html")
+    #d = pq(filename="FAB_checkins_2.html")
+
     all_checkins = [e for e in d(".item") if pq(e).attr("data-checkin-id") is not None]
     meta = [ {"checkin":pq(e).attr("data-checkin-id"),
     "purchased": pq(e)(".purchased a").attr("href")} for e in all_checkins]
@@ -130,7 +146,7 @@ def attach_venues():
         p = item["purchased"]
         if p is None:
             continue
-        #print(p)
+        print(p)
         c.execute('update checkins set purchased= ? where cid = ?',(p,cid))    
     conn.commit()
 
