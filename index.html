@@ -26,52 +26,116 @@ redirect_from:
     .updates-container{
         bottom:0px;
         position:absolute;
-        margin-bottom:20px;
+        margin-bottom:50px;
 
     }
     .updates-container .update{
-        outline:2px solid white;
-        padding: 10px;
+        border:2px solid white;
+        border-radius:0px;
+        padding: 20px;
+
+        text-shadow: 3px 3px 7px rgba(0, 0, 0, 1), 3px 3px 20px rgba(0, 0, 0, .5);
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, .5);
+        margin-top: 30px;
+    }
+
+    .updates-container .update p{
+        margin-bottom:0px;
+    }
+
+    .update-footer{
+        text-align:center;
+        margin-top:25px;
+        text-decoration:underline;
     }
 
     h3{
+
         text-transform:uppercase;
     }
+
+    p{
+        font-size:120%;
+    }
+
+
+    #my-inverse-nav{
+        color:white;
+        background-color:black!important;
+    }
+
+    a:any-link{
+        color:white;
+        text-decoration:underline;
+    }
+    .navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+.nav-link.nav-link.nav-link.nav-link{
+    color:white;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
+.navbar .nav-link{
+    text-transform: uppercase;
+}
+
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="gradient-background">
+
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my-inverse-nav">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Artists
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Joey Mars</a>
+              <a class="dropdown-item" href="#">Adam O'Day</a>
+              <a class="dropdown-item" href="#">Andy Jacob</a>
+            </div>
+          </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Beers <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Brewery <span class="sr-only">(current)</span></a>
+          </li>
+
+
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+
+      <span>
+            <a class="nav-link merch-icon" href="#">Merch </a>
+      </span>
+      <span>
+        <a class="nav-link social-icon" href="#">IG </a>
+  </span>
+  <span>
+    <a class="nav-link social-icon" href="#">FB </a>
+</span>
     </div>
   </nav>
 
