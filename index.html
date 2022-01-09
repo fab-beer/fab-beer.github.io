@@ -12,55 +12,21 @@ redirect_from:
 ---
 
 
-<script>
-    
-    $.fn.isInViewport = function() {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
-        var viewportTop = $(window).scrollTop();
-        var viewportBottom = viewportTop + $(window).height();
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
-    
-    $(function(){
-        
-        $("body").on("click",".toggle-button",(ev)=>{
-            targetId= $(ev.target).attr("target-id")
-            $("#" + targetId ).each((i,e)=>{
-                $(e).toggleClass("on",!$(e).hasClass("on"))})
-            })
-            
-        })
-        
-    </script>
 
-
-<div class="row"><div class="col-md-4 offset-md-4 valentines banner">
-        
-    <h4><a href="/find">🌍 Experience our beer finder 🌍</a></h4>to find FAB cans near you...
-</div>
-</div>
-
-
-    <div class="container d-none d-md-block cans-banner">
-        <div class="sections-container col-sm-8">
-            <section id="cans">
-                <h1><span class="black fab">FAB</span><span>CANS</span></h1>
-            </section>
-        </div>
-    </div>
-    {% assign fullcans = "sqp:bf" | split: ':' %}
+    {% assign fullcans = "marvel:raygun:p4p" | split: ':' %}
     <div class="can-gallery d-md-flex d-none">
         <div class="can-list">
             {% for can in site.cans %}
+            {{can.code}}
             {% if  fullcans  contains can.code %}
+            XANXAN
             <div class="can">
                 <a href= "/cans/{{can.code}}"> 
-                    <img  class="main" src="/assets/canart/cans_{{ can.code }}_art.png" />
+                    <img  class="main" src="/assets/beer_pours/{{ can.code }}_pour_square.jpg" />
                 </a>
                 <div class="additional-images">
-                    <img src="/assets/canart/cans_{{ can.code }}_tall_can.png"/>
-                    <img src="/assets/canart/cans_{{ can.code }}_wide_can.png"/>
+                    <img src="/assets/beer_pours/{{ can.code }}_pour_tall.jpg"/>
+                    <img src="/assets/beer_pours/{{ can.code }}_pour_wide.jpg"/>
                 </div>
             </div>
             {% endif %}
@@ -68,22 +34,8 @@ redirect_from:
         </div>
     </div>
     
-    <div class="can-gallery-mobile d-md-none">
-
-        {% for can in site.cans %}
-        {% if  fullcans  contains can.code %}
-        <div class="row">
-            <div class="can can-stretch col-xs-12">
-                <img  class="main" src="/assets/canart/cans_{{ can.code }}_art.png" />
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}    
-    </div>
     
     <div class="container">
-        
-        
     </div>
     <div class="col-sm-5 offset-sm-3">
         
@@ -93,22 +45,13 @@ redirect_from:
         <p>LAUNCHING 1/1/2020. <b>FAB</b>--our cans are venues of free expression dedicated to connecting artists with audiences to make powerful statements. Founded by Ben Holmes and a <a href="/people"/>team of artists and activists</a>. Our mission is to brew world class beers which build a better world through art. Read on...</p>
         
     </div>
-    <!-- <div class="col-sm-5 offset-sm-3">
-        <div class="slick-gallery">
-            {% for image in site.static_files %}
-            {% if image.path contains 'balloon_wip' %}
-            {% if image.path contains 'bs_' %}
-            <div class="slick-image">
-                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class=" " />
-            </div>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    
-     -->
-     <div class="col-sm-5 offset-sm-3">
+
+
+
+
+
+
+    <div class="col-sm-5 offset-sm-3">
      <div class="image-container image-fullwidth-container"><img src="/assets/cans/can_horiz.png"/></div>
      </div>
 

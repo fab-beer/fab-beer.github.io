@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-bottom {% if page.inverted %} navbar-dark bg-dark {% endif %}">
+<nav class="navbar navbar-expand-lg fixed-top {% if page.inverted %} navbar-dark bg-dark {% endif %}">
         <a class="navbar-brand" href="/">FAB</a>
      
 
@@ -14,24 +14,18 @@
           <ul class="beer-icon-list">
           {% for c in site.data.cans %}
 
-    {% if  fullcans contains can.code %}
-            <li><a href="/{{c.code}}"><img src="/assets/balloons/small-heads_{{c.code}}.png"/></a></li>
-            {% endif %}
+            <li class="can-icon"><a href="/{{c.code}}"><img src="/assets/can_graphics/can_icons/1x/{{c.code}}_can_circle.png"/></a></li>
+
           {% endfor %}
 
 
         </ul>
           <ul class="navbar-nav">
-            <li  class="bd-text new"> <a  href="/somerville">FAB SOMERVILLE</a></li>
-            <!-- <li class="bd-text"> <a   href="/people">Team</a></li>-->
-            <li class="bd-text "> <a   href="http://store.fab.beer">Store</a></li> 
-
-            <!-- <li class="bd-text"> <a   href="http://eepurl.com/gLvm09">Mailing List</a></li> -->
-            <li class="bd-text "> <a   href="/sticky">Stickers!</a></li>
-            <li class="bd-text"> <a   href="/contact">Contact</a></li>
-
-            <!-- <li class="bd-text"> <a   href="/blog_posts/2019-12-06">Blog</a></li> -->
-    
+            <li  class="bd-text"> <a  href="/beers">Beers</a></li>
+            <li  class="bd-text"> <a  href="/art">Art</a></li>
+            <li class="bd-text "> <a   href="http://store.fab.beer">Merch</a></li> 
+            <li class="bd-text"> <a   href="/contact">Abour</a></li>
+            <li  class="bd-text new"> <a  href="/find">Art</a></li>
           </ul>
            
         </div>
