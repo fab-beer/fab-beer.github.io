@@ -7,63 +7,148 @@ style: main
 navbar: true
 
 redirect_from:
-  - /post/123456789/
-  - /post/123456789/my-amazing-post/
+- /post/123456789/
+- /post/123456789/my-amazing-post/
 ---
 
 
+<div class="hero">
+    <video id="myVideo" autoplay="autoplay" muted loop>
+        <source src="/assets/ezgif.com-gif-maker.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    
+</div>
 
-    {% assign fullcans = "marvel:raygun:p4p" | split: ':' %}
+<div class="hero-logo-container">
+    <img class="hero-logo" src="/assets/2022_web_brand_assets/2022_web_brand_assets_fab_logo_black-07.png"/>
+</div>
+
+{% assign fullcans = "marvel:raygun:p4p" | split: ':' %}
+<div class="col-sm-8 offset-sm-2 can-gallery-container">
     <div class="can-gallery d-md-flex d-none">
+        
+        
         <div class="can-list">
             {% for can in site.cans %}
-            {{can.code}}
             {% if  fullcans  contains can.code %}
-            XANXAN
+            
+            
             <div class="can">
-                <a href= "/cans/{{can.code}}"> 
-                    <img  class="main" src="/assets/beer_pours/{{ can.code }}_pour_square.jpg" />
-                </a>
-                <div class="additional-images">
-                    <img src="/assets/beer_pours/{{ can.code }}_pour_tall.jpg"/>
-                    <img src="/assets/beer_pours/{{ can.code }}_pour_wide.jpg"/>
+                <div class="link-image-container {{can.code}}">
+                    <a href= "/cans/{{can.code}}" class="link-image"> 
+                        
+                        <img  class="main" src="/assets/beer_pours/{{ can.code }}_pour_square.jpg" />
+                    </a>
                 </div>
+                <li class="can-icon {{can.code}}"><a href="/{{can.code}}">                    
+                    <svg><circle cx="50%" cy="50%" r="50px"></circle></svg>
+                    <img src="/assets/can_graphics/can_icons/1x/{{can.code}}_can_bare_shadow.png"/></a></li>
+                    
+                    <div class="svg-container">
+                        <svg width="100%" height="160px" viewBox="0 0 1098.72 89.55">
+                            <path id="curve" fill="transparent" d="M0.17,0.23c0,0,105.85,77.7,276.46,73.2s243.8-61.37,408.77-54.05c172.09,7.64,213.4,92.34,413.28,64.19"></path>
+                            <text width="100%" style="transform:translate3d(0,0,0);">
+                                <textPath style="transform:translate3d(0,0,0);" alignment-baseline="top" xlink:href="#curve" startOffset="1200px" class="text-path">{{can.name}}</textPath>
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+
+<!-- 
+                <div class="svg-container">
+                    <svg width="100%" height="160px" viewBox="0 0 100 100">
+                        <circle id="curve" fill="rgba(0, 0, 0, .5)" cx=50 cy=50 r=60></circle>
+                        <text width="100%" style="transform:translate3d(0,0,0);">
+                            <textPath style="transform:translate3d(0,0,0);" alignment-baseline="top" xlink:href="#curve" startOffset="0px" class="text-path">{{can.name}}</textPath>
+                        </text>
+                    </svg>
+                </div> -->
+
+                
+                <!-- <div class="offset-text {{can.code}}-text">{{can.name}}</div> -->
+                
+                
+                {% endif %}
+                {% endfor %}    
+                <script>
+                    
+
+                    
+                    
+                    const textPaths = document.querySelectorAll(".text-path");
+                    const h = document.documentElement, 
+                    b = document.body,
+                    st = 'scrollTop',
+                    sh = 'scrollHeight';
+                    
+                    for ( const textPath of textPaths){
+                        print(textPath)
+                    document.addEventListener("scroll", e => {
+                        let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+                        textPath.setAttribute("startOffset", (-percent * 40) + 1200)
+                    });
+                }
+                </script>
             </div>
-            {% endif %}
-            {% endfor %}    
         </div>
     </div>
     
     
-    <div class="container">
-    </div>
-    <div class="col-sm-5 offset-sm-3">
-        
-        <h1 id="fab"><span class="fab" id="story">FAB<span></span></span></h1>
-        <p>Beer for art's sake</p>
-        <h3 id="brewed-for-a-better-future">Brewed for a better future</h3>
-        <p>LAUNCHING 1/1/2020. <b>FAB</b>--our cans are venues of free expression dedicated to connecting artists with audiences to make powerful statements. Founded by Ben Holmes and a <a href="/people"/>team of artists and activists</a>. Our mission is to brew world class beers which build a better world through art. Read on...</p>
-        
-    </div>
+</div>
 
 
 
 
-
-
-    <div class="col-sm-5 offset-sm-3">
-     <div class="image-container image-fullwidth-container"><img src="/assets/cans/can_horiz.png"/></div>
-     </div>
-
-    <div class="col-sm-5 offset-sm-3">
-        
-        <h3 class="chapter" id="our-first-project">Our Founding Story</h3>        
-        <p>The <a href="/babydictators" class="fancy bd-text">BABY DICTATORS PROJECT</a> is our first can series (and we have more on the way). It responds to the destruction of artwork in good humor with a statement of resilience!</p>
-        <p>We’re creating cans which invent good hearted satirical balloons, hand-designed by artists to be flown to challenge dictators around the world. Balloons will first be fabricated and flown at activist events and political rallies in the USA election year 2020. The first two balloons are <em class="bf-text fancy">BALLOON FACTORY</em> (<i>Adam O'Day</i>) and <em class="sqp-text fancy">SQUID PRO QUO</em> (<i>Andy Jacob</i>). Using can sales to fund art and fabrication, we will create enough balloons to replace many times over the “Baby Trump” protest artwork which was destroyed at an LSU Football Game.</p>
-
-        <p>As citizens of an international community stunned by the rise of totalitarian dictatorships around the world, it was important for us as brewers and activists to create a company which would stand up for ideals that we believed in as citizens. One  moment of transformation occurred for us on a morning in October 2019 when a piece of protest artwork was destroyed at a rally in Alabamba, USA. The <a href="/babydictators" class="fancy bd-text">BABY DICTATORS PROJECT</a> is our first can series and it was built around this moment to respond to destruction of artwork with resilience, satirizing current- and aspiring dictators by building large balloons to explore their positive futures in alternative realties where they had happier childhoods.</p>
-        
-        <p>The purpose of this project is to reinforce artistic resiliency and free protest on a national scale. Its mascot is MEDUSA BALLOON, created by Adam O’Day.</p>
+<div class="home-text-col col-sm-4 offset-sm-4">
+    
+    <p><b>FAB</b></p>
+    <p><b>FERMENTATION ARTS BREWERY</b></p><p>Our mission to <b>share with you</b>, artistic fermentations which use the power of biotransformation, invention, and science to push the boundaries of what is possible in beer. We focus on producing world class New England IPAs and Biotransformed Lagers. But that's just for now.</p>
+    
+    
+    
+    
+    
+    <p></p><p></p>
+    <p><b>BEERS</b></p>
+    <p>Our current lineup features two <b>New England IPAs</b> and one unique <b>Pilsner</b>.</p>
+    <p><em class="marvel-text fancy">TALES OF THE MOSAIC MARVEL</em> is a single-hop New England IPA featuring passionfruity Mosaic hops. <em class="raygun-text fancy">JOHNNY GET YOUR RAYGUN</em> is a Double-Dry Hopped Double New England IPA made with Citra and Mosaic hops. The hops for both <em class="marvel-text fancy">MARVEL</em> and <em class="raygun-text fancy">RAYGUN</em> are processed using cryogenic techniques in an ultracold facility. This specialty process is thought to  preserve more fully the effervescent citrus and tropical aromas of these resinous nortwestern USA varieties. This, in combination with dry hopping during fermentation, makes it possible to create beers with more intense hop flavor and aroma then is possible otherwise.</p>
+    
+    <p><em class="p4p-text fancy">PILSNER 4 PEACE</em> is a single-hopped Pilsner with a unique story. Created in January 2020, during the event of global escalations in hostilities between the USA and Iran, the <em class="p4p-text fancy">P4P</em> was first conceived as an artistic collaboration to create collaborative can labels by international artists, including artists from Kurdish, Iranian, Asian, Jewish and North American background, and a beer so simple that we would share the recipe for free with brewers undertaken artwork with similar intent.</p>
+    <img class="image-left image-200" src="/assets/story/mashhops.jpg"/>    
+    <p><b>What makes our beer unique?</b></p><p><em>Creative hopping techniques, incredible ingredients, and unique methods for yeast husbandry.</em></p><p>Each of our ales amd lagers incorporate mash hopping, a technique which deeply integrates hop flavors (see below). These beers are also dry hopped at two points–once, during the height of fermentation activity to promote the integration of resinous hop terpenes into the flavor of the beer, and secondly, at the tail end of fermentation–immediately following which addition, the beer is capped to capture the hop aromas. This naturally carbonates the beer, producing tiny, champagne-like bubbles from fermentation of trace amounts of sugars present in the hop flowers.</p>
+    
+    
+    <em class="technique-header toggle-button" target-id="mash-hop-target">[+] Learn about Mash Hopping</em>
+    <span class="technique-content toggle-target" id="mash-hop-target">Both <em class="marvel-text fancy">Marvel</em> and <em class="raygun-text fancy">Raygun</em> are mash hopped beers. Mash hopping involves the addition of hops (in this case, Citra) at the very beginning of beer brewing. These hops are added at relatively low temperatures, allowing extraction into the beer of many sought after aroma compounds in addition to some plant sugars which are found in the hop flowers. Mash hop plant matter is discarded before the beer is boiled and our early experiments point to this reducing the extraction of harsh bitterness which can result from hop additions during the boiling of wort. </span></p>
+    
+    
+    
+    <em class="technique-header toggle-button" target-id="mash-hop-target">[+] Learn more about "Cryo" hops</em>
+    <span class="technique-content toggle-target" id="mash-hop-target">Both <em class="marvel-text fancy">Marvel</em> and <em class="raygun-text fancy">Raygun</em> are mash hopped beers. Mash hopping involves the addition of hops (in this case, Citra) at the very beginning of beer brewing. These hops are added at relatively low temperatures, allowing extraction into the beer of many sought after aroma compounds in addition to some plant sugars which are found in the hop flowers. Mash hop plant matter is discarded before the beer is boiled and our early experiments point to this reducing the extraction of harsh bitterness which can result from hop additions during the boiling of wort. </span></p>
+    
+    
+    
+    
+    <em class="technique-header toggle-button" target-id="mash-hop-target">[+] Learn more about biotransformation</em>
+    <span class="technique-content toggle-target" id="mash-hop-target">Both <em class="marvel-text fancy">Marvel</em> and <em class="raygun-text fancy">Raygun</em> are mash hopped beers. Mash hopping involves the addition of hops (in this case, Citra) at the very beginning of beer brewing. These hops are added at relatively low temperatures, allowing extraction into the beer of many sought after aroma compounds in addition to some plant sugars which are found in the hop flowers. Mash hop plant matter is discarded before the beer is boiled and our early experiments point to this reducing the extraction of harsh bitterness which can result from hop additions during the boiling of wort. </span></p>
+    
+    
+    
+    
+    
+    {% assign image_groups = site.static_files | group_by_exp: "item", 'item.path| split: "/" | slice:3 | first'  %}
+    
+    
+    {% for can in site.cans %}
+    {% if  fullcans contains can.code %}
+    <div class="chapter"></div>
+    {% include can_info_template.html %}
+    {% endif %}
+    {% endfor %}
+    
+    <section>
         
         <div class="story-inline-gallery">
             
@@ -93,37 +178,10 @@ redirect_from:
             })
         </script>
         
-        
-        <h1 id="beers">BEERS</h1>
-        <p>Ben and Todd created the recipes for our first two beers. <em class="bf-text fancy">BALLOON FACTORY</em> is a West Coast-style IPA and <em class="sqp-text fancy">SQUID PRO QUO</em> is a Double IPA. Both beers are brimming with hops from the American Northwest. </p>
-        <img class="image-left image-200" src="/assets/story/mashhops.jpg"/>    
-        <p>Each of these first recipes employs mash hopping, a technique which deeply integrates hop flavors (see below). These beers are also dry hopped at two points–once, during the height of fermentation activity to promote the integration of resinous hop terpenes into the flavor of the beer, and secondly, at the tail end of fermentation–immediately following which addition, the beer is capped to capture the hop aromas. This naturally carbonates the beer, producing tiny, champagne-like bubbles from fermentation of trace amounts of sugars present in the hop flowers.</p>
-        <em class="technique-header toggle-button" target-id="mash-hop-target">[+] Learn about Mash Hopping</em>
-        <span class="technique-content toggle-target" id="mash-hop-target">Both <em class="bf-text fancy">BALLOON FACTORY</em> and <em class="sqp-text fancy">SQUID PRO QUO</em> are mash hopped beers. Mash hopping involves the addition of hops (in this case, Citra) at the very beginning of beer brewing. These hops are added at relatively low temperatures, allowing extraction into the beer of many sought after aroma compounds in addition to some plant sugars which are found in the hop flowers. Mash hop plant matter is discarded before the beer is boiled and our early experiments point to this reducing the extraction of harsh bitterness which can result from hop additions during the boiling of wort. </span></p>
-        
-        
-        
-        {% assign image_groups = site.static_files | group_by_exp: "item", 'item.path| split: "/" | slice:3 | first'  %}
-        
-        
-        {% for can in site.cans %}
-        {% if  fullcans contains can.code %}
-        <div class="chapter"></div>
-        {% include can_info_template.html %}
-        <p>...Learn more about <a href="/cans/{{can.code}}"><em class="fancy {{can.code}}-text text-upper">{{can.name}}</em></a> and fund Baby Dictator balloons with <b>{{can.merch_types}}</b>, <a href="/cans/{{can.code}}">HERE</a>!</p>
-        {% endif %}
-        {% endfor %}
-        
-        
-        
+    </section>
+</div>
 
-<h1>MAILING LIST</h1>
-Sign up for our mailing list!
-<a href="http://eepurl.com/gLvm09">here</a>
-        
-    </div>
-    
-    
-    <footer></footer>
-    
+
+<footer></footer>
+
 </div>

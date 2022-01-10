@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg fixed-top {% if page.inverted %} navbar-dark bg-dark {% endif %}">
-        <a class="navbar-brand" href="/">FAB</a>
+        <!-- <a class="navbar-brand" href="/">FAB</a> -->
      
 
 
@@ -11,21 +11,26 @@
     
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-          <ul class="beer-icon-list">
-          {% for c in site.data.cans %}
-
-            <li class="can-icon"><a href="/{{c.code}}"><img src="/assets/can_graphics/can_icons/1x/{{c.code}}_can_circle.png"/></a></li>
-
-          {% endfor %}
-
-
-        </ul>
           <ul class="navbar-nav">
-            <li  class="bd-text"> <a  href="/beers">Beers</a></li>
-            <li  class="bd-text"> <a  href="/art">Art</a></li>
-            <li class="bd-text "> <a   href="http://store.fab.beer">Merch</a></li> 
-            <li class="bd-text"> <a   href="/contact">Abour</a></li>
-            <li  class="bd-text new"> <a  href="/find">Art</a></li>
+            <div class="navbar-bg"></div>
+            <li class="brand"><a href="/"><img src="/assets/2022_web_brand_assets/2022_web_brand_assets_fab_logo_word_transparent.png"></a>
+            </li><div class="spacer"></div>
+
+            <li  > <a  href="/beers">
+              <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_beers.svg">
+            </a></li><div class="spacer"></div>
+            <li  > <a  href="/art">
+              <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_art.svg">
+            </a></li><div class="spacer"></div>
+            <li> <a   href="http://store.fab.beer">
+              <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_merch.svg">
+            </a></li> <div class="spacer"></div>
+            <li > <a   href="/contact">
+              <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_about.svg">
+            </a></li><div class="spacer"></div>
+            <li  > <a  href="/find">
+              <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_find.svg">
+            </a></li>
           </ul>
            
         </div>
