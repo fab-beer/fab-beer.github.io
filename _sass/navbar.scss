@@ -53,7 +53,7 @@
     align-items:center;
     position:relative;
     font-size:120%;
-    background-color:white;
+    // background-color:white;
 
     li{
         height:100%;
@@ -73,10 +73,10 @@
 body:not(.inverted){
     
     .navbar-brand.navbar-brand.navbar-brand:hover{
-        color:white;
+        // color:white;
     }
     .navbar-brand.navbar-brand.navbar-brand{
-        color:white;
+        // color:white;
         // background-color:black;
     }
     .navbar{
