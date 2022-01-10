@@ -5,6 +5,14 @@ $bf-bg-color:#ffea01;
 $bf-fg-color:#cd6800;
 
 
+$marvel-bg-color:#FF10F0;
+$marvel-fg-color:#270091;
+$raygun-bg-color:#39FF14;
+$raygun-fg-color:#cd0060;
+$p4p-bg-color:#28cded;
+$p4p-fg-color:#000000;
+
+
 $offprem-color:#FF1493;
  
 .valentines.banner{
@@ -62,6 +70,20 @@ body{
     }
 }
 
+.marvel-text{
+    color:$marvel-fg-color;
+    background-color:$marvel-bg-color; 
+}
+.raygun-text{
+    color:$raygun-fg-color;
+    background-color:$raygun-bg-color;
+}
+
+.p4p-text{
+    color:$p4p-fg-color;
+    background-color:$p4p-bg-color;
+}
+
 .bf-text{
     color:$bf-fg-color;
     background-color:$bf-bg-color;
@@ -103,14 +125,12 @@ body{
 }
 
 .can-gallery{
-    width:100vw;
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
     
-    padding-top:20px;
-    padding-bottom:120px;
+
     .can {
         width:250px;
     }
@@ -124,12 +144,17 @@ body{
 
 
 .can{
-    
+
     position:relative;
-    box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.35);
-    margin: 40px;
+    margin: 20px;
     img.main{
         width:100%;
+    }
+
+    .link-image{
+        clip-path: circle(90px at center);
+        box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.35);
+        display:block;
     }
     
     &:not(:first-child) .additional-images{
@@ -195,20 +220,6 @@ svg#Layer_1 {
     top: 50%;
     transform: translate(0%, -50%);
     height: 75%;
-}
-
-
-
-.hero.hero{
-    position: absolute;
-    /* box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4); */
-    margin-top: 17.5vh;
-    margin-bottom: 17.5vh;
-    /* height: 66vh; */
-    background-color: white;
-    color: black;
-    padding: 30px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, .25);
 }
 
 
@@ -341,6 +352,63 @@ footer{
     color: black;    
 }
 
+li.can-icon{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;    
+    // left: 100%;
+    // margin-left: -18px;
+    // bottom: 100%;
+    // margin-bottom: -18px;
+
+    left: 50%;
+    margin-left: 30px;
+    bottom: 50%;
+    margin-bottom: 30px;
+    z-index: 10;
+
+
+    img{
+        width:128px;
+        height:128px;
+    }
+
+    svg{
+        position:absolute;
+        z-index:-1;
+        width:100%;
+        height:100%;
+
+        left: 50%;
+        margin-left: -50%;
+        top: 50%;
+        margin-top: -50%;
+    }
+}
+.can-icon.marvel{
+    svg circle{
+        fill:$marvel-bg-color;
+    }
+}
+
+.can-icon.p4p{
+    svg circle{
+        fill:$p4p-bg-color;
+    }
+}
+
+.can-icon.raygun{
+    svg circle{
+        fill:$raygun-bg-color;
+    }
+}
+  
+
+
 
 
 .text-upper{
@@ -363,21 +431,6 @@ footer{
     opacity:.8;
 }
 
-.beer-icon-list{
-    display:flex;
-    padding:0px;
-    margin:0px;
-    li{
-        list-style:none;
-        height:32px;
-        margin-left:10px;
-        margin-right:10px;
-        img{
-            height:100%;
-        }        
-    }
-    
-}
 
 
 .ad{
