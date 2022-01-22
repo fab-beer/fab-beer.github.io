@@ -1,0 +1,89 @@
+---
+layout: default
+title: Our Beers
+id: beers
+balloonscripts: true
+style: main
+navbar: true
+
+redirect_from:
+- /post/123456789/
+- /post/123456789/my-amazing-post/
+---
+
+
+{% assign fullcans = "marvel:raygun:p4p" | split: ':' %}
+<div class="col-sm-8 offset-sm-2 can-gallery-container">
+    <div class="can-gallery d-md-flex d-none">
+        
+        
+        <div class="can-list">
+            {% for can in site.cans %}
+            {% if  fullcans  contains can.code %}
+            
+            
+            <div class="can">
+                <div class="link-image-container {{can.code}}">
+                    <a href= "/cans/{{can.code}}" class="link-image"> 
+                        
+                        <img  class="main" src="/assets/beer_pours/{{ can.code }}_pour_square.jpg" />
+                    </a>
+                </div>
+                <li class="can-icon {{can.code}}"><a href="/{{can.code}}">                    
+                    <svg><circle cx="50%" cy="50%" r="50px"></circle></svg>
+                    <img src="/assets/can_graphics/can_icons/1x/{{can.code}}_can_bare_shadow.png"/></a></li>
+                    
+                    <!-- <div class="svg-container">
+                        <svg width="100%" height="160px" viewBox="0 0 1098.72 89.55">
+                            <path id="curve" fill="transparent" d="M0.17,0.23c0,0,105.85,77.7,276.46,73.2s243.8-61.37,408.77-54.05c172.09,7.64,213.4,92.34,413.28,64.19"></path>
+                            <text width="100%" style="transform:translate3d(0,0,0);">
+                                <textPath style="transform:translate3d(0,0,0);" alignment-baseline="top" xlink:href="#curve" startOffset="1200px" class="text-path">{{can.name}}</textPath>
+                            </text>
+                        </svg>
+                    </div> -->
+                </div>
+
+<!-- 
+                <div class="svg-container">
+                    <svg width="100%" height="160px" viewBox="0 0 100 100">
+                        <circle id="curve" fill="rgba(0, 0, 0, .5)" cx=50 cy=50 r=60></circle>
+                        <text width="100%" style="transform:translate3d(0,0,0);">
+                            <textPath style="transform:translate3d(0,0,0);" alignment-baseline="top" xlink:href="#curve" startOffset="0px" class="text-path">{{can.name}}</textPath>
+                        </text>
+                    </svg>
+                </div> -->
+
+                
+                <!-- <div class="offset-text {{can.code}}-text">{{can.name}}</div> -->
+                
+                
+                {% endif %}
+                {% endfor %}    
+                <!-- <script>
+                    
+
+                    
+                    
+                    const textPaths = document.querySelectorAll(".text-path");
+                    const h = document.documentElement, 
+                    b = document.body,
+                    st = 'scrollTop',
+                    sh = 'scrollHeight';
+                    
+                    for ( const textPath of textPaths){
+                        print(textPath)
+                    document.addEventListener("scroll", e => {
+                        let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+                        textPath.setAttribute("startOffset", (-percent * 40) + 1200)
+                    });
+                }
+                </script> -->
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+
+
+
