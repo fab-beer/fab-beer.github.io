@@ -1,6 +1,14 @@
 body.page-qr{
     padding-top:200px;
 
+    .qr-grid-container{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+
+
     .splash{
         margin-top:200px;
     }
@@ -12,11 +20,23 @@ body.page-qr{
     img.qr{
         margin-left:auto;
         margin-right:auto;
-        width:100%;
+        // width:100%;
+        // max-width: 100%;
+        // max-height: 100%;
+        height: 35vh;
     }
 
     .qr-container{
         padding:10px;
+
+    // width: 45vw;
+    margin: 10px;
+    // height: 35vh;
+    // width: 35vw;
+    justify-content: space-evenly;
+    max-width: 100vw;
+
+
         &.labs{
             background-color:white;
         }
