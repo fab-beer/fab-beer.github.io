@@ -1,19 +1,59 @@
 ---
 title: P4P
 layout: default
-id: p4p
-style: main
+id: labs
 
 ---
 
-<div class="splash">
+<div class="splash">    
 
-    <div>
-        <h2 class="center coming-soon-container"><img src="/assets/p4p/p4p-01.png"/> <span class="coming-soon">COMING SOON</span><img src="/assets/p4p/p4p-02.png"/></h2>
-        <h1><div>#PILSNER4<span class="peace">PEACE</span></div></h1>
+    <h1 class="header"> WELCOME TO FAB LABS </h1>
+
+{% assign fullcans = "exp1" | split: ':' %}
+<div class="col-sm-8 offset-sm-2 can-gallery-container">
+    <div class="can-gallery d-flex">
+        
+        
+        <div class="can-list">
+            {% for can in site.cans %}
+            {% if  fullcans  contains can.code %}
+            
+            
+            <div class="can">
+                <div class="link-image-container {{can.code}}">
+                    <a href= "/cans/{{can.code}}" class="link-image"> 
+                        
+                        <img  class="main" src="/assets/beer_pours/{{ can.code }}_pour_square.jpg" />
+                    </a>
+                </div>
+                <li class="can-icon {{can.code}}"><a href="/{{can.code}}">                    
+                    <svg><circle cx="50%" cy="50%" r="50px"></circle></svg>
+                    <img src="/assets/can_graphics/can_icons/1x/{{can.code}}_can_bare_shadow.png"/></a></li>
+             
+                </div>
 
 
-    <div>Created by Adam O'Day, Jonny Hiya, Olivia Li, Tarraneh Eftekhari, Jerel Dye, and FAB<div></div>
-<p><div>@Brewers: want to brew a <b>#PILSNER4PEACE</b> with us? Email <a href="mailto:collab@fab.beer">collab@fab.beer</a>!</div></p>
+                
+                {% endif %}
+                {% endfor %}    
+
+            </div>
+        </div>
+    </div>
+
+    <div class="biline">
+        <p>This is the web destination for feedback and to follow our limited experimental release program.</p>    
+        <p>Coming soon: <ul><li>experimental release venue list</li>, <li>featured tasters section</li>.</ul></p>
+        <p>To sign up for the featured tasters, click here:</p>
+
+</div>
+    
+    
+</div>
+
+
+
+
+
 </div>
 </div>

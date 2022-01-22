@@ -22,12 +22,13 @@ redirect_from:
 </div>
 
 <div class="hero-logo-container">
-    <img class="hero-logo" src="/assets/2022_web_brand_assets/2022_web_brand_assets_fab_logo_black-07.png"/>
+    <img class="hero-logo" src="/assets/2022_web_brand_assets/2022_web_brand_assets_fab_logo_words.png"/>
 </div>
 
-{% assign fullcans = "marvel:raygun:p4p" | split: ':' %}
+{% assign fullcans = "marvel:raygun:p4p:exp1" | split: ':' %}
 <div class="col-sm-8 offset-sm-2 can-gallery-container">
-    <div class="can-gallery d-md-flex d-none">
+    <!-- <div class="can-gallery d-md-flex d-none"> -->
+    <div class="can-gallery d-flex">
         
         
         <div class="can-list">
@@ -102,16 +103,20 @@ redirect_from:
 
 
 <div class="home-text-col col-sm-6 offset-sm-3">
-    
-    <p><b>FAB</b></p>
-    <p><b>FERMENTATION ARTS BREWERY</b></p><p>Our mission to <b>share with you</b>, artistic fermentations which use the power of biotransformation, invention, and science to push the boundaries of what is possible in beer. We focus on producing world class New England IPAs and Biotransformed Lagers. But that's just for now.</p>
+    <div class="content-title">
+    <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_fab_logo_word_transparent.png">
+    </div>
+
+    <p>At <b>FERMENTATION ARTS BREWERY</b> our mission to <b>share with you</b>, artistic fermentations which use the power of biotransformation, invention, and science to push the boundaries of what is possible in beer. We focus on producing world class New England IPAs and Biotransformed Lagers. But that's just for now.</p>
     
     
     
     
     
     <p></p><p></p>
-    <p><b>BEERS</b></p>
+    <a   href="/beers" class="content-section header beers" id=beers>
+    <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_beers.svg">
+    </a>
     <p>Our current lineup features two <b>New England IPAs</b> and one unique <b>Pilsner</b>.</p>
     <p><em class="marvel-text fancy">TALES OF THE MOSAIC MARVEL</em> is a single-hop New England IPA featuring passionfruity Mosaic hops. <em class="raygun-text fancy">JOHNNY GET YOUR RAYGUN</em> is a Double-Dry Hopped Double New England IPA made with Citra and Mosaic hops. The hops for both <em class="marvel-text fancy">MARVEL</em> and <em class="raygun-text fancy">RAYGUN</em> are processed using cryogenic techniques in an ultracold facility. This specialty process is thought to  preserve more fully the effervescent citrus and tropical aromas of these resinous nortwestern USA varieties. This, in combination with dry hopping during fermentation, makes it possible to create beers with more intense hop flavor and aroma then is possible otherwise.</p>
     
@@ -150,21 +155,26 @@ redirect_from:
     
     <section>
         
+
+
+<li> 
+    <a   href="http://store.fab.beer" class="content-section header merch" id=merch>
+    <img src="/assets/2022_web_brand_assets/2022_web_brand_assets_merch.svg">
+  </a>
         <div class="story-inline-gallery">
             
-            <button type="button" class="btn medusa-t-button" data-toggle="modal" data-target="#medusa-t-modal"><img class="thumbnail t-shirt" src="assets/icons/medusa_navy.png"/> <em class="medusa-t-title new">MEDUSA T</em><div class="medusa-t-description">by Adam O'Day. Profits fund baby dictator balloons</p></div></button>
+            <button type="button" class="btn medusa-t-button" data-toggle="modal" data-target="#medusa-t-modal"><img class="thumbnail t-shirt" src="assets/icons/squiddie_mockup.jpg"/> <em class="medusa-t-title new">Squiddie Hoodie</em><div class="medusa-t-description">by Andy Jacob</p></div></button>
             
-            <img src="/assets/img/Headwithoutgray@0,5x.png" alt="Original Baby Trump" class="img-responsive image image-300" />
         </div>
         
         
-        {% assign shopify_product_id=4407213490260 %}
+        {% assign shopify_product_id=4405807939668 %}
         
         <div class="modal fade" id="medusa-t-modal">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Get a Medusa T</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">SQUIDDIE HOODIE</h5>
                     </div>
                     <div class="modal-body shopify">
                         {% include storeproduct.js %}

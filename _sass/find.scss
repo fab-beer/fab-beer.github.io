@@ -156,7 +156,7 @@ body.page-find{
     .find-hud-top{
         position:absolute;
         left:50%;
-        top:50px;
+        top:100px;
         transform:translate(-50%, 0%);
 
         input[type="search"]{
@@ -243,7 +243,7 @@ body.page-find{
             padding:10px;
             background-color:white;
             position:fixed;
-            margin-top:10vh;
+            margin-top:20vh;
 
             .find-scroll-container{
             max-height:50vh;

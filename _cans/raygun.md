@@ -20,7 +20,7 @@ beer_cat: ipa
 beer_style: DDH NE IPA
 code: raygun
 collection_id: .nan
-description: .nan
+description: Classic citra/mosaic aroma. Juicy fruit gum, orange and red grapefruit with a hint of creamsicle. Mango juice flavor, with pleasantly bitter citrus. Hints of berry and lemongrass. Full, juicy body with a hazy-texture, drying finish.<par>Grab your raygun and go.
 glass: teku
 head_graphic: .nan
 last_brewed: .nan

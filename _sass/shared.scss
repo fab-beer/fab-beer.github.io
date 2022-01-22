@@ -11,7 +11,8 @@ $raygun-bg-color:#39FF14;
 $raygun-fg-color:#cd0060;
 $p4p-bg-color:#28cded;
 $p4p-fg-color:#000000;
-
+$exp1-bg-color:#FFFFFF;
+$exp1-fg-color:#FF1493;
 
 $offprem-color:#FF1493;
  
@@ -79,6 +80,12 @@ body{
     background-color:$raygun-bg-color;
 }
 
+.exp1-text{
+    color:$exp1-fg-color;
+    background-color:$exp1-bg-color;
+}
+
+
 .p4p-text{
     color:$p4p-fg-color;
     background-color:$p4p-bg-color;
@@ -122,13 +129,17 @@ body{
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
+    justify-content: space-around;
 }
 
 .can-gallery{
+    margin-left:auto;
+    margin-right:auto;
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    max-width:800px;
     
 
     .can {
@@ -406,8 +417,18 @@ li.can-icon{
         fill:$raygun-bg-color;
     }
 }
+
+.can-icon.exp1{
+    svg circle{
+        fill:$exp1-bg-color;
+    }
+}
+
+
   
 
+
+  
 
 
 

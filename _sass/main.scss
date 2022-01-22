@@ -1,11 +1,35 @@
-body.style-main{
-
+body.page-home{
     margin-top:100vh;
+}
+body.style-main{
+    background-color:yellow;
+
+    .content-section.header{
+
+        height:64px;
+        margin-top:32px;
+        margin-bottom:16px;
+
+        position:relative;
+        display:block;
+        img{
+            height:100%;
+            border: 5px solid black;
+        }
+    }
+.content-title{
+    margin-bottom:30px;
+    img{
+        border:5px solid black;
+        height:120px;
+    }
+}
 
     .artist-flex-list{
         display:flex;
         flex-wrap:wrap;
     }
+
 
 
 
@@ -43,9 +67,10 @@ body.style-main{
         // }
     }
     .can-gallery-container{
-        margin-top:-400px;
-        border-bottom:1px solid white;
-        margin-bottom:50px;
+        margin-top:-300px;
+        // margin-top:-400px;
+        // border-bottom:1px solid white;
+        // margin-bottom:50px;
     }
     margin-top-50{
         margin-top:50px;
@@ -85,10 +110,12 @@ body.style-main{
     }
     .home-text-col{
         // padding-top:20px;
-        background-color:white;
-        border-radius: 0px 50px 0px 0px;
-        box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
+        background-color:yellow;
+        // border-radius: 0px 50px 0px 0px;
+        // box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
         padding: 40px;
+        padding-bottom:200px;
+
     }
 
     .svg-container{
@@ -123,7 +150,7 @@ body.style-main{
     .hero-logo-container{
         position: absolute;
         top: 25vh;
-        height: 10vh;
+        height: 25vh;
         width: 100%;
         display: flex;
         flex-wrap: nowrap;
@@ -364,7 +391,7 @@ body.style-main{
     
     .story-inline-gallery{
 
-        height: 300px;
+        // height: 300px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -388,12 +415,26 @@ body.style-main{
             font-size:inherit;
         }
         .medusa-t-description{
+            display:none;
             max-width:9em;
+        }
+
+        .medusa-t-title{
+                position:relative;
+                display:block;
+                margin-top:-100px;
+                width:100%;
+                text-align:center;
+                padding-top:4px;
+                padding-bottom:4px;
+                background-color:white;
+
         }
         
     }
     img.thumbnail.t-shirt{
-        width: 9em;
+        // width: 9em;
+        width:100%;
         display: block;
     }
 

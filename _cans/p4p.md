@@ -27,9 +27,9 @@ code: p4p
 collection_id: .nan
 description: American-style Pilsner, with subtle layers of Mandarina Bavaria and Citra
   hops, created in partnership between brewers and international, activist artists.
-  In-keeping with the American Pilsner style, P4P's assertive hoppiness is infused
+  In-keeping with the American Pilsner style. P4P's assertive hoppiness is infused
   in multiple stages of mash- and biotransformational, "High Krausen" dry-hopping.
-  Clean and easy-drinking, with some sweetness and counter-balancing bitterness, the
+  Clean and easy-drinking, with some sweetness and counter-balancing bitterness. <par>Nilla wafer pilsner-malt upfront with minerally lager aroma on edges. Extremely clean tasting with slight citrus component, without herbaceousness one might expect from the hops. This one “goes down easy”.<par>The
   PILSNER 4 PEACE is envisioned as an international open-source collaboration beer.
   Participating breweries are invited to collaborate on this open recipe, and all
   they have to do is pay local artists a fair price to contribute to our global art

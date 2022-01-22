@@ -1,20 +1,16 @@
 ---
 layout: default
 title: Our Beers
-id: beers
-balloonscripts: true
-style: main
+id: beers2
 navbar: true
+permalink: /beers
 
-redirect_from:
-- /post/123456789/
-- /post/123456789/my-amazing-post/
 ---
 
 
-{% assign fullcans = "marvel:raygun:p4p" | split: ':' %}
+{% assign fullcans = "marvel:raygun:p4p:exp1" | split: ':' %}
 <div class="col-sm-8 offset-sm-2 can-gallery-container">
-    <div class="can-gallery d-md-flex d-none">
+    <div class="can-gallery d-flex">
         
         
         <div class="can-list">

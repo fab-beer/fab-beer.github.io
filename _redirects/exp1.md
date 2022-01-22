@@ -1,3 +1,4 @@
 ---
-newUrl: /cans/raygun
+newUrl: /cans/exp1
+
 ---
