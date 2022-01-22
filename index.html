@@ -30,13 +30,15 @@ redirect_from:
     <!-- <div class="can-gallery d-md-flex d-none"> -->
     <div class="can-gallery d-flex">
         
-        
+ 
         <div class="can-list">
             {% for can in site.cans %}
             {% if  fullcans  contains can.code %}
             
             
             <div class="can">
+                <div class="can-name" ><span><mark class="{{can.code}}-text">{{can.name}}</mark></span></div>
+
                 <div class="link-image-container {{can.code}}">
                     <a href= "/cans/{{can.code}}" class="link-image"> 
                         
@@ -92,6 +94,36 @@ redirect_from:
                     });
                 }
                 </script> -->
+
+                <script>
+                    var divs = $('.can-name'),
+                        limit = 1000;  /* scrolltop value when opacity should be 0 */
+            
+                    
+                    $(window).on('scroll', function() {
+                    var st = $(this).scrollTop();
+            
+                    // console.log(st)
+                    /* avoid unnecessary call to jQuery function */
+                    // if (st <= limit) {
+                        // console.log("HI")
+                    divs.each(
+                        function(i,e){
+                            // console.log(i)
+                            st2 = $(e).parents(".can")[0].offsetTop
+                            console.log(i,st,st2)
+                            sh = screen.height /8
+                            console.log(sh)
+                            console.log(st - st2-sh) 
+                            console.log(((st - st2-sh) > 0))
+                            // (st - st2+sh)/250
+                        $(e).css({ 'opacity' :  (st - st2-sh) > 0 ? (st - st2-sh) / 300  : 0 });
+                        console.log($(e).css("opacity"),"hi")
+                        }
+                    )
+                    // }
+                    });
+                    </script>
             </div>
         </div>
     </div>
@@ -163,8 +195,13 @@ redirect_from:
   </a>
         <div class="story-inline-gallery">
             
-            <button type="button" class="btn medusa-t-button" data-toggle="modal" data-target="#medusa-t-modal"><img class="thumbnail t-shirt" src="assets/icons/squiddie_mockup.jpg"/> <em class="medusa-t-title new">Squiddie Hoodie</em><div class="medusa-t-description">by Andy Jacob</p></div></button>
-            
+            <button type="button" class="btn medusa-t-button" data-toggle="modal" data-target="#medusa-t-modal">
+                <img class="thumbnail t-shirt" src="assets/icons/squiddie_mockup.jpg"/> 
+                <div class="medusa-title-container">
+                <a  href="#"><em class="medusa-t-title new">Squiddie Hoodie</em>
+                </a>
+                <div class="medusa-t-description">Please your inner cuttlefish.<br/>Help us hire a sweatshirt model.</p></div></button>
+            </div>
         </div>
         
         

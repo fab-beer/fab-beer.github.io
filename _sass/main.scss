@@ -72,6 +72,17 @@ body.style-main{
         // border-bottom:1px solid white;
         // margin-bottom:50px;
     }
+    .can{
+        .can-name{
+            position: absolute;
+            bottom: 0%;
+            left: 40%;
+            // color: white;
+            font-weight: bold;
+            // text-shadow: 2px 2px black;
+            z-index: 2;
+        }
+    }
     margin-top-50{
         margin-top:50px;
     }
@@ -409,25 +420,44 @@ body.style-main{
         }
         
         >.medusa-t-button{
-            padding:15px;
+            // padding:15px;
             margin-left:0px;
             margin-right:0px;
             font-size:inherit;
+            padding:0px;
         }
         .medusa-t-description{
-            display:none;
-            max-width:9em;
-        }
+            // display:none;
+            // max-width:9em;
+            font-size: 16px;
+            max-width: 80%;
+            word-wrap: break-word;
+          line-height:.9em;
+    margin-left: auto;
+    margin-right: auto;
+}
+        
 
-        .medusa-t-title{
-                position:relative;
-                display:block;
-                margin-top:-100px;
-                width:100%;
-                text-align:center;
-                padding-top:4px;
-                padding-bottom:4px;
-                background-color:white;
+
+        .medusa-title-container{
+            position: absolute;
+            display: block;
+            margin-top: 5%;
+            width: 100%;
+            text-align: center;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            background-color: rgba(255, 255, 255, .8);
+            top: 0px;
+            height: 100px;
+            opacity: 100%;
+            font-size: 32px;
+            a:link-visited{
+                text-decoration: underline;
+            }
+            a:link{
+                text-decoration: underline;
+            }
 
         }
         
@@ -436,11 +466,13 @@ body.style-main{
         // width: 9em;
         width:100%;
         display: block;
+        // border: 20px solid white;
+        // outline: 5px solid black;
     }
 
     section.description{
         //margin-top:10px;
-        display:none;
+        // display:none;
 
 
     }
