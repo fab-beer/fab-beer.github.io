@@ -16,15 +16,63 @@
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+        margin-right: 20px;
+    margin-left: 10px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
 }
 
+.navbar{
+    ul{
+        margin-top:0px;
+        padding-top:100px;
+        background-color:black;
+    }
+}
 
+.navbar-collapse.show{
+    .brand{
+        display:none;
+    }
+}
 .navbar .brand{
 // position:absolute;
 // right:100%;
 // top:0px;
 // height:48px;
+
+}
+.navbar button{
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+    padding:10px;
+    color:white;
+    z-index:100;
+    margin-top:25px;
+    background-color: black;
+    border: 2px solid white;
+    outline: 5px solid black;
+    border-radius: 4px;
+    overflow: hidden;
+
+
+}
+.toggler-container{
+
+    svg{path{
+        stroke:white;
+    }}
+
+    // top: 0px;
+    // left: 50%;
+    // transform: translate(-50%, 0%);
+    // position: absolute;
+
+    img{
+        background-color:white;
+        height:42px;
+    }
 
 }
 .navbar-nav{
@@ -38,28 +86,33 @@
         margin-top:-5px;
         margin-bottom:-5px;
         position:absolute;
-        // background-color:black;
+        background-color:black;
         z-index:-10;
     }
 
 
+  
     svg{
         fill:red;
     }
     margin-top:25px;
     box-shadow:1px 1px 0px black;
     text-transform:uppercase;
-    height:48px;
+    // height:48px;
     align-items:center;
     position:relative;
     font-size:120%;
     // background-color:white;
 
     li{
-        height:100%;
+        // height:100%;
+        margin-top:6px;
+        margin-bottom:6px;
 
         img{
-            height:100%;
+            height:42px;
+            background-color:white;
+            // height:100%;
         }
     }
     .spacer{
