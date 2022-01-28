@@ -1,0 +1,26 @@
+---
+layout: generic
+title: Our merch is FAB
+id: merch
+navbar: true
+permalink: /merch
+---
+
+<div class="col-sm-8 offset-sm-2">
+
+<h1>Check out our merch</h1>
+
+<div class="gallery merch">
+    {% for product in site.data.products %}
+    <div class="gallery-item">
+    {% include store_product.html %}
+    </div>
+    {% endfor %}
+
+</div>
+
+</p><i>More at: <a href="http://store.fab.beer">our online store</a></i>
+</div>
+
+
+

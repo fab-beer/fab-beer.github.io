@@ -1,0 +1,29 @@
+<div class="product">
+<button type="button" class="btn medusa-t-button" data-toggle="modal" data-target="#{{product.shopify_id}}-modal">
+    <img class="thumbnail t-shirt" src="{{product.image}}"/> 
+    <div class="medusa-title-container">
+        <a  href="#"><em class="medusa-t-title new">{{product.title}}</em>
+        </a>
+        <div class="medusa-t-description">
+            {{product.caption}}
+        </div>
+    </button>
+
+<div class="modal fade" id="{{product.shopify_id}}-modal">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{product.title}}</h5>
+            </div>
+            <div class="modal-body shopify">
+                {% include storeproduct.js %}
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#{{product.shopify_id}}-modal').on('shown.bs.modal', function () {
+        window.dispatchEvent(new Event('resize'));
+    })
+</script> 
+</div>

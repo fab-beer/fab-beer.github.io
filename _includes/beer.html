@@ -1,0 +1,27 @@
+
+<section id="{{can.code}}-beer" class="title special-title">
+    
+    <div class="beer-image">
+        <a href="/cans/{{can.code}}" class="hover-fade-hint">
+            <img src="/assets/beer_pours/{{ can.code }}_pour_wide.jpg" alt="{{can.code}} can" class="img-responsive can-image image" />
+        </a> 
+    </div>
+    
+    <div>
+        <h3>
+            <em class="{{can.code}}-text fancy can-section">
+                <a href="/cans/{{can.code}}">{{can.name}}</a>
+            </em>
+        </h3>
+        <h5>{{can.beer_style}}, {{can.abv}}%</h5>
+    </div>
+</section>
+
+
+<section id="{{can.code}}-description" class="description">
+    <h6 class="default-description-header">Description</h6>
+    {{can.description}}
+</section>
+
+
+

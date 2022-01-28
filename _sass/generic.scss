@@ -1,0 +1,15 @@
+body.generic{
+
+    background-color:$generic-bg-color;
+    padding-top:100px;
+img{
+    max-width:100%;
+}
+
+.gallery{
+    display:flex;
+    .gallery-item{
+        width:400px;
+    }
+}
+}
