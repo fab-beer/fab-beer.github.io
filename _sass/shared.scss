@@ -16,6 +16,10 @@ $exp1-fg-color:#FF1493;
 
 $offprem-color:#FF1493;
  
+
+$main-bg-color:yellow;
+$generic-bg-color:#efefef;
+
 .valentines.banner{
     background-color:$offprem-color;
     color:white;
@@ -79,7 +83,23 @@ body{
         color:inherit;
     }
 }
-
+.page-contact{
+    .background{
+    background-image:url("/assets/img/beach.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    position:fixed;
+    z-index:-1;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+}
+    .content{
+        background-color: rgba(255, 255, 255, .7);
+    }
+}
 
 .marvel-text{
     color:$marvel-fg-color;
