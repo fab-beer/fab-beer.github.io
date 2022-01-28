@@ -112,13 +112,12 @@ redirect_from:
                             // console.log(i)
                             st2 = $(e).parents(".can")[0].offsetTop
                             console.log(i,st,st2)
-                            sh = screen.height /8
-                            console.log(sh)
-                            console.log(st - st2-sh) 
-                            console.log(((st - st2-sh) > 0))
+                            sh = screen.height
+   
+                            var opcalc = (st - (st2-(sh-300)))
                             // (st - st2+sh)/250
-                        $(e).css({ 'opacity' :  (st - st2-sh) > 0 ? (st - st2-sh) / 300  : 0 });
-                        console.log($(e).css("opacity"),"hi")
+                        $(e).css({ 'opacity' : opcalc > 0 ? opcalc / 300  : 0 });
+                        console.log($(e).css("opacity"),opcalc,st,st2,sh,"hi")
                         }
                     )
                     // }
