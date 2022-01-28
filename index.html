@@ -103,24 +103,17 @@ redirect_from:
                     $(window).on('scroll', function() {
                     var st = $(this).scrollTop();
             
-                    // console.log(st)
-                    /* avoid unnecessary call to jQuery function */
-                    // if (st <= limit) {
-                        // console.log("HI")
+     
                     divs.each(
                         function(i,e){
                             // console.log(i)
                             st2 = $(e).parents(".can")[0].offsetTop
                             console.log(i,st,st2)
                             sh = screen.height
-   
                             var opcalc = (st - (st2-(sh-300)))
-                            // (st - st2+sh)/250
-                        $(e).css({ 'opacity' : opcalc > 0 ? opcalc / 300  : 0 });
-                        console.log($(e).css("opacity"),opcalc,st,st2,sh,"hi")
+                        $(e).css({ 'opacity' : opcalc > 0 ? opcalc / 500  : 0 });
                         }
                     )
-                    // }
                     });
                     </script>
             </div>

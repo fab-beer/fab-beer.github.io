@@ -21,7 +21,8 @@ body.style-main{
     margin-bottom:30px;
     img{
         border:5px solid black;
-        height:120px;
+        max-height:120px;
+        max-width:100%;
     }
 }
 
