@@ -133,7 +133,7 @@ body.style-main{
         padding: 40px;
         padding-bottom:200px;
         border: 5px solid black;
-        outline: 5px solid white;
+        // outline: 5px solid white;
 
     }
 
@@ -219,20 +219,18 @@ body.style-main{
       }
 
       .technique-header{
-        padding: 10px;
-        margin-top:10px;
-        text-transform:uppercase;
-        background: white;
+        padding: 15px;
+        margin-top: 10px;
+        text-transform: uppercase;
         color: black;
-        margin-bottom:0px;
-        display:block;
-        cursor:pointer;
-        padding:10px;
-        font-style:normal;
+        margin-bottom: 0px;
+        display: block;
+        cursor: pointer;
+        font-style: normal;
         text-align: center;
-        font-weight:bold;
-
-        border: 1.5px solid black;
+        font-weight: bold;
+        border: 2px solid black;
+        border-radius: 10px;
       }
       .technique-content{
           padding:20px;
