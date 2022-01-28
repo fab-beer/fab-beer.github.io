@@ -15,14 +15,19 @@ body.style-main{
         img{
             height:100%;
             border: 5px solid black;
+            outline: 5px solid white;
+            background-color:white;
         }
+
     }
 .content-title{
     margin-bottom:30px;
     img{
-        border:5px solid black;
+        border:10px solid black;
         max-height:120px;
         max-width:100%;
+        outline: 5px solid white;
+        background-color:white;
     }
 }
 
@@ -127,6 +132,8 @@ body.style-main{
         // box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
         padding: 40px;
         padding-bottom:200px;
+        border: 5px solid black;
+        outline: 5px solid white;
 
     }
 
