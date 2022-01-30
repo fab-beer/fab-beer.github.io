@@ -32,7 +32,15 @@
                     if (!this.isOpen) {
                         var t = this;
 
-                        window.highlightVenue(t);
+                        console.log(
+                            "TODO: re-enable click highlight events"
+                        )
+
+
+                        // TODO uncomment
+                        // window.highlightVenue(t);
+
+                        // TODO debug and uncomment
                         // var infoWindow = _.find(infoWindowArray, function(w) {
                         //     return w.id === t.id;
                         // });
@@ -224,13 +232,10 @@ function getGlassware(name){
 
         var packy_anchors = {}
         window.packy_anchors = packy_anchors
-
         var cnt = 0
-        console.log("HIHIHI")
         for (var v of window.offprem_can_locations){
-            console.log("HIHIHI222 ")
-            console.log(v)
-            console.log(window.cans)
+
+
             for( var c of window.cans){
                 console.log(c)
                 var nm = c.code;

@@ -19,7 +19,7 @@ def fillforward():
 
     requests.packages.urllib3.disable_warnings()
 
-    db_file = os.path.join(os.getcwd(), 'untappd.db')
+    db_file = os.path.join(os.getcwd(), 'db/untappd.db')
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
 
@@ -138,7 +138,7 @@ def attach_venues():
     "purchased": pq(e)(".purchased a").attr("href")} for e in all_checkins]
 
     requests.packages.urllib3.disable_warnings()
-    db_file = os.path.join(os.getcwd(), 'untappd.db')
+    db_file = os.path.join(os.getcwd(), 'db/untappd.db')
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
     for item in meta:
