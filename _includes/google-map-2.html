@@ -1,5 +1,5 @@
 <div id="map"></div>
-    
+
 <script>
     var map;
     function initMap() {
@@ -7,7 +7,6 @@
         var _map;
         var _markers = [];
         var _infoWindows = [];
-
         window._markers = _markers
         
         var setupInfoWindowClose = function(markerArray, infoWindowArray) {
@@ -21,8 +20,8 @@
                 });
             });
         };
-
-
+        
+        
         
         var setupMarkerClickEvents = function(markerArray, infoWindowArray) {
             _.each(markerArray, function(element) {
@@ -31,346 +30,338 @@
                     // and display it
                     if (!this.isOpen) {
                         var t = this;
-
+                        
                         console.log(
-                            "TODO: re-enable click highlight events"
+                        "TODO: re-enable click highlight events"
                         )
-
-
+                        
+                        
                         // TODO uncomment
                         // window.highlightVenue(t);
-
+                        
                         // TODO debug and uncomment
                         // var infoWindow = _.find(infoWindowArray, function(w) {
-                        //     return w.id === t.id;
-                        // });
-                        
-                        // if (infoWindow) {
-                        //     infoWindow.open(_map, this);
-                        // }
-                        
-                        //this.isOpen = true;
-                    } 
-                });
-            });
-        };
-        
-        
-
-        /*
-        * @param array of google.maps.Marker objects
-        * @param array of google.maps.InfoWindow objects
-        */
-
-
-        
-        
-        
-        
-        var data_images = {bf:`<image x="-25" y="-25" width="50" height="50" href="{% include balloon_uri_bf.txt %}"/>`,
-        sqp:`<image x="-25" y="-25" width="50" height="50" href="{% include balloon_uri_sqp.txt %}"/>`}
-
-        var bf_svg_path = btoa(`<?xml version="1.0"?>
-        <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g>
-                <circle cx="0" cy="0" r="30" stroke="red" fill="transparent"/>
-                ${data_images['bf']}
-                <animateMotion dur="2s" repeatCount="indefinite" path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
-            </g>
-        </svg>`);
-        
-        var sqp_svg_path =btoa(`
-        <?xml version="1.0"?>
-        <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g>
-                <circle cx="0" cy="0" r="30" stroke="red" fill="transparent"/>
-                ${data_images['sqp']}
-                <animateMotion dur="2s" repeatCount="indefinite" path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
-            </g>
-        </svg>`);
-        
-
-        var gift_svg_path=btoa(`
-        <svg id="gift_include" height='100px' width='100px'  fill="#FF1493" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-            <g><path fill="#FF1493" d="M73.23,25.663h-9.431c1.829-1.444,3.455-3.402,4.787-5.733c4.001-7.001,3.874-14.604-3.129-18.605   C60.218-1.669,54.316,0.765,50,5.113c-4.316-4.348-10.219-6.783-15.458-3.789c-7.002,4.001-7.129,11.604-3.128,18.605   c1.332,2.331,2.958,4.289,4.787,5.733H26.77c-7.698,0-13.938,6.24-13.938,13.938v17.92v10.62v17.921   c0,7.698,6.24,13.938,13.938,13.938h17.92h10.62H73.23c7.698,0,13.938-6.24,13.938-13.938V68.141v-10.62v-17.92   C87.169,31.903,80.929,25.663,73.23,25.663z M18.153,39.601c0-4.751,3.865-8.616,8.616-8.616h17.92v26.537H18.153V39.601z    M26.77,94.678c-4.751,0-8.616-3.865-8.616-8.616V68.141H44.69v26.537H26.77z M81.847,86.062c0,4.751-3.865,8.616-8.616,8.616   H55.31V68.141h26.537V86.062z M55.31,57.521V30.985H73.23c4.751,0,8.616,3.865,8.616,8.616v17.92H55.31z"></path></g></svg>
-        `)
-        
-        var glass_color="blue"
-        var glassware_paths = {'teku': btoa(`
-<svg version="1.1" id="teku" class="glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 85.72 188.09" style="enable-background:new 0 0 85.72 188.09;" xml:space="preserve">
-<g>
-	<g>
-		<g>
-			<path fill="blue" d="M54.5,172.37l-5.85-4.55l-2.28-5.2l1.3-43.26l7.16-20.82l30.9-21.14L69.46,14.96l2.28-8.78h-6.81H20.8h-6.81l2.28,8.78
-				L0,77.41l30.9,21.14l7.16,20.82l1.3,43.26l-2.28,5.2l-5.85,4.55l-20.82,5.85c0,0-2.28,3.58-1.3,3.9
-				c0.98,0.33,18.21,6.83,33.82,5.85h2.86c15.61,0.98,29.85-5.53,30.82-5.85c0.98-0.33-1.3-3.9-1.3-3.9L54.5,172.37z M18.16,24.67
-				l1.82-9.54l-1.82-6.36h48.9l-2.73,6.36l3.63,9.54H18.16z"/>
-		</g>
-	</g>
-	<g>
-		<path d="M19.37,3.45H63.5h1.68C57.85,2.7,50.14,0,42.17,0S26.49,2.7,19.16,3.45H19.37z"/>
-	</g>
-</g>
-</svg>
-
-        `),
-        'pilsner':btoa(`
-        <svg version="1.1" id="pilsner" class="glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 62.2 167.52" style="enable-background:new 0 0 62.2 167.52;" xml:space="preserve">
-<g>
-	<g>
-		<path d="M49.09,124.08C48.6,101.23,62.2,49.67,62.2,29.58c0-8.85-3.44-21.88-3.44-21.88H29.74h-1.9H3.44C3.44,7.7,0,20.73,0,29.58
-			c0,20.09,13.6,71.65,13.11,94.5c-0.49,22.86-10.61,34.09-10.65,36.54c-0.06,4.25,0.74,4.91,6.15,5.9
-			c5.28,0.97,20.48,0.99,21.18,0.99c0.82,0,18.53-0.02,23.81-0.99c5.41-0.99,6.21-1.65,6.15-5.9
-			C59.7,158.17,49.58,146.95,49.09,124.08z M3.1,26.08l2.92-15h50.71l2.29,15H3.1z"/>
-		<path d="M35.75,167.52c0,0-0.02,0-0.03,0c-0.02,0-0.04,0-0.04,0H35.75z"/>
-	</g>
-	<path d="M8.11,5.46c5.43-3.62,9.32-3.97,11.95-3.55c1.21,0.19,2.23,0.56,5,0.97c3.69,0.54,5.54,0.81,7.43,0.32
-		c3.2-0.82,3.1-2.53,6.13-3.07c3-0.53,5.67,0.68,6.3,0.97c2.2,1,2.33,1.93,5,3.07c0.43,0.18,1.94,0.8,4.04,1.13"/>
-</g>
-</svg>
-
-
-       `)};
-        
-        function getIcon(name) {
-            console.log(name == "bf")
-            return name=="bf" ? {
-                url: 'data:image/svg+xml;charset=UTF-8;base64,' + bf_svg_path,
-                scaledSize: new google.maps.Size(100, 100)
+                            //     return w.id === t.id;
+                            // });
+                            
+                            // if (infoWindow) {
+                                //     infoWindow.open(_map, this);
+                                // }
+                                
+                                //this.isOpen = true;
+                            } 
+                        });
+                    });
+                };
                 
-            } : {
-                url: 'data:image/svg+xml;charset=UTF-8;base64,' + sqp_svg_path, 
-                scaledSize: new google.maps.Size(200, 200)
-            };
-        }
-
-function getGlassware(name){
-            return {url:'data:image/svg+xml;charset=UTF-8;base64,'+glassware_paths[name],
+                
+                
+                /*
+                * @param array of google.maps.Marker objects
+                * @param array of google.maps.InfoWindow objects
+                */
+                
+                
+                
+                
+                
+                
+                var data_images = {bf:`<image x="-25" y="-25" width="50" height="50" href="{% include balloon_uri_bf.txt %}"/>`,
+                sqp:`<image x="-25" y="-25" width="50" height="50" href="{% include balloon_uri_sqp.txt %}"/>`}
+                
+                var bf_svg_path = btoa(`<?xml version="1.0"?>
+                <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                        <circle cx="0" cy="0" r="30" stroke="red" fill="transparent"/>
+                        ${data_images['bf']}
+                        <animateMotion dur="2s" repeatCount="indefinite" path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+                    </g>
+                </svg>`);
+                
+                var sqp_svg_path =btoa(`
+                <?xml version="1.0"?>
+                <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                        <circle cx="0" cy="0" r="30" stroke="red" fill="transparent"/>
+                        ${data_images['sqp']}
+                        <animateMotion dur="2s" repeatCount="indefinite" path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+                    </g>
+                </svg>`);
+                
+                
+                var gift_svg_path=btoa(`
+                <svg id="gift_include" height='100px' width='100px'  fill="#FF1493" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                    <g><path fill="#FF1493" d="M73.23,25.663h-9.431c1.829-1.444,3.455-3.402,4.787-5.733c4.001-7.001,3.874-14.604-3.129-18.605   C60.218-1.669,54.316,0.765,50,5.113c-4.316-4.348-10.219-6.783-15.458-3.789c-7.002,4.001-7.129,11.604-3.128,18.605   c1.332,2.331,2.958,4.289,4.787,5.733H26.77c-7.698,0-13.938,6.24-13.938,13.938v17.92v10.62v17.921   c0,7.698,6.24,13.938,13.938,13.938h17.92h10.62H73.23c7.698,0,13.938-6.24,13.938-13.938V68.141v-10.62v-17.92   C87.169,31.903,80.929,25.663,73.23,25.663z M18.153,39.601c0-4.751,3.865-8.616,8.616-8.616h17.92v26.537H18.153V39.601z    M26.77,94.678c-4.751,0-8.616-3.865-8.616-8.616V68.141H44.69v26.537H26.77z M81.847,86.062c0,4.751-3.865,8.616-8.616,8.616   H55.31V68.141h26.537V86.062z M55.31,57.521V30.985H73.23c4.751,0,8.616,3.865,8.616,8.616v17.92H55.31z"></path></g></svg>
+                    `)
+                    
+                    var glass_color="blue"
+                    var glassware_paths = {'teku': btoa(`
+                    <svg version="1.1" id="teku" class="glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 85.72 188.09" style="enable-background:new 0 0 85.72 188.09;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <g>
+                                <path fill="blue" d="M54.5,172.37l-5.85-4.55l-2.28-5.2l1.3-43.26l7.16-20.82l30.9-21.14L69.46,14.96l2.28-8.78h-6.81H20.8h-6.81l2.28,8.78
+                                L0,77.41l30.9,21.14l7.16,20.82l1.3,43.26l-2.28,5.2l-5.85,4.55l-20.82,5.85c0,0-2.28,3.58-1.3,3.9
+                                c0.98,0.33,18.21,6.83,33.82,5.85h2.86c15.61,0.98,29.85-5.53,30.82-5.85c0.98-0.33-1.3-3.9-1.3-3.9L54.5,172.37z M18.16,24.67
+                                l1.82-9.54l-1.82-6.36h48.9l-2.73,6.36l3.63,9.54H18.16z"/>
+                            </g>
+                        </g>
+                        <g>
+                            <path d="M19.37,3.45H63.5h1.68C57.85,2.7,50.14,0,42.17,0S26.49,2.7,19.16,3.45H19.37z"/>
+                        </g>
+                    </g>
+                </svg>
+                
+                `),
+                'pilsner':btoa(`
+                <svg version="1.1" id="pilsner" class="glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 62.2 167.52" style="enable-background:new 0 0 62.2 167.52;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M49.09,124.08C48.6,101.23,62.2,49.67,62.2,29.58c0-8.85-3.44-21.88-3.44-21.88H29.74h-1.9H3.44C3.44,7.7,0,20.73,0,29.58
+                        c0,20.09,13.6,71.65,13.11,94.5c-0.49,22.86-10.61,34.09-10.65,36.54c-0.06,4.25,0.74,4.91,6.15,5.9
+                        c5.28,0.97,20.48,0.99,21.18,0.99c0.82,0,18.53-0.02,23.81-0.99c5.41-0.99,6.21-1.65,6.15-5.9
+                        C59.7,158.17,49.58,146.95,49.09,124.08z M3.1,26.08l2.92-15h50.71l2.29,15H3.1z"/>
+                        <path d="M35.75,167.52c0,0-0.02,0-0.03,0c-0.02,0-0.04,0-0.04,0H35.75z"/>
+                    </g>
+                    <path d="M8.11,5.46c5.43-3.62,9.32-3.97,11.95-3.55c1.21,0.19,2.23,0.56,5,0.97c3.69,0.54,5.54,0.81,7.43,0.32
+                    c3.2-0.82,3.1-2.53,6.13-3.07c3-0.53,5.67,0.68,6.3,0.97c2.2,1,2.33,1.93,5,3.07c0.43,0.18,1.94,0.8,4.04,1.13"/>
+                </g>
+            </svg>
+            
+            
+            `)};
+            
+            function getIcon(name) {
+                console.log("OPENING ICON LOOP")
+                console.log(name == "bf")
+                return name=="bf" ? {
+                    url: 'data:image/svg+xml;charset=UTF-8;base64,' + bf_svg_path,
+                    scaledSize: new google.maps.Size(100, 100)
+                    
+                } : {
+                    url: 'data:image/svg+xml;charset=UTF-8;base64,' + sqp_svg_path, 
+                    scaledSize: new google.maps.Size(200, 200)
+                };
+            }
+            
+            function getGlassware(name){
+                console.log(name)
+                return {url:'data:image/svg+xml;charset=UTF-8;base64,'+  glassware_paths[name],
             scaledSize: new google.maps.Size(20,20)
+            }
         }
-}
         function getGift(){
             return {url:'data:image/svg+xml;charset=UTF-8;base64,'+gift_svg_path,
             scaledSize: new google.maps.Size(20,20)
         }
-        }
-        _map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: Number(window.venue_beers[0].lat)-.1, lng: Number(window.venue_beers[0].lng)-.3},
-            zoom: 10,
-            disableDefaultUI: true, // a way to quickly hide all controls
-            options: {
-                gestureHandling: 'greedy'
-            }
-        });
-
-
-        var anchors = {}
-        window.anchors = anchors
-
-        var cnt = 0
-        for (var v of window.venue_beers){
-            for( var c of window.cans){
-                var nm = c.code;
-                var untappd_bid = /\d*$/.exec(c.untappd);
-
-                if (v.bid!= untappd_bid){continue}
-                    if( !( nm in anchors) ){
-                    anchors[nm] = []
-                }
-
-                cnt +=1;
-                k = cnt;
-                var marker;
-                var infoWindow;
-                var containerDiv = document.createElement('div');
-                containerDiv.className = 'venueWindow';
-                
-                // create headline
-                var header = document.createElement('h4');
-                var checkinText = (v.n_checkins > 1) ? ' Check-ins at ' : ' Check-in at ';
-                header.textContent = v.n_checkins + checkinText + v.venue_name;
-                containerDiv.appendChild(header);
-                
-                var marker = new google.maps.Marker({
-                    id: cnt,
-                    clickable: true,
-                    isOpen: false,
-                    position: new google.maps.LatLng(Number(v.lat), Number(v.lng)),
-                    map: _map,
-                    visible:false,
-
-                    venue:{
-                        v
-                    },
-                    icon:getGlassware(c.glassware)
-
-                });
-                
-                _markers.push(marker);
-                
-                infoWindow = new google.maps.InfoWindow({
-                    id: cnt,
-                    clickable: true,
-                    content: containerDiv,
-                    maxWidth: 250,
-                    position: new google.maps.LatLng(Number(v.lat),Number( v.lng))
-                });
-                
-
-                anchors[nm].push( { lat:v.lat, lng:v.lng, venue:v, can:c })
-
-                //infoWindow.open(_map, marker);
-                _infoWindows.push(infoWindow);
-                
-            }
-
-         
-        }
-
-
-        var packy_anchors = {}
-        window.packy_anchors = packy_anchors
-        var cnt = 0
-        for (var v of window.offprem_can_locations){
-
-
-            for( var c of window.cans){
-                console.log(c)
-                var nm = c.code;
-                
-                console.log[v[c.code]]
-                var untappd_bid = /\d*$/.exec(c.untappd);
-
-                // if (v.bid!= untappd_bid){continue}
-                console.log("BEFORE")
-                console.log(nm)
-                console.log(nm in ['trem', 'p4p'])
-                if (['trem', 'p4p'].indexOf(nm) ==-1){continue}
-                console.log("GOTPAST")
-
-                console.log(packy_anchors)
-                console.log(!( nm in packy_anchors))
-                    if( !( nm in packy_anchors) ){
-                    packy_anchors[nm] = []
-                    console.log("SETTT")
-                }
-
-                cnt +=1;
-                k = cnt;
-                var marker;
-                var infoWindow;
-                var containerDiv = document.createElement('div');
-                containerDiv.className = 'venueWindow';
-                
-                // create headline
-                var header = document.createElement('h4');
-                var checkinText = "package store";
-                header.textContent = "unknown checkins";
-                containerDiv.appendChild(header);
-                
-                var marker = new google.maps.Marker({
-                    id: cnt,
-                    clickable: true,
-                    isOpen: false,
-                    position: new google.maps.LatLng(Number(v.lat), Number(v.lng)),
-                    map: _map,
-
-                    visible:false,
-                    packy:{
-                        v
-                    },
-                    icon:getGift(),
-
-                });
-                
-                _markers.push(marker);
-                
-                infoWindow = new google.maps.InfoWindow({
-                    id: cnt,
-                    clickable: true,
-                    content: containerDiv,
-                    maxWidth: 250,
-                    position: new google.maps.LatLng(Number(v.lat),Number( v.lng))
-                });
-                
-
-                console.log("ADDING TO ANCHORS")
-                packy_anchors[nm].push( { lat:v.lat, lng:v.lng, packy:v, can:c })
-
-                console.log(packy_anchors)
-                console.log("ADDED")
-                //infoWindow.open(_map, marker);
-                _infoWindows.push(infoWindow);
-                
-            }
-
-         
-        }
-
-        setupInfoWindowClose(_markers, _infoWindows);
-        setupMarkerClickEvents(_markers, _infoWindows);
-
-        
-
-        var overlay = new google.maps.OverlayView();
-        overlay.draw = function() {};
-        overlay.setMap(_map);
-
-        var screen_anchors = {}
-        window.screen_anchors = screen_anchors
-        window.anchors = anchors;
-        window.overlay = overlay;
-        window.map = _map;
-
-
-        var packy_screen_anchors = {}
-        window.packy_screen_anchors = packy_screen_anchors
-        //var packy_anchors = {}
-        window.packy_anchors =packy_anchors;
-
-        google.maps.event.addListenerOnce(_map, 'idle', function(){
-            //TEMPORARILY DISABLES BALLOON PHYSICS        
-            window.createPhysics();
-                    google.maps.event.addListener(_map,'bounds_changed', function(){
-                        window.updateBounds();
-                    })
-
-                    google.maps.event.addListener(_map,'idle', function(){
-                        window.updateBounds();
-                    })
-
-                    google.maps.event.addListener(_map,'dragstart', function(){
-                        window.startDragging();
-                    })
-
-
-                    google.maps.event.addListener(_map,'zoom_changed', function(){
-                        window.zoomChanged();
-                    })
-
-                    google.maps.event.addListener(_map,'dragend', function(){
-                        window.doneDragging();
-                    })
-
-                    google.maps.event.addListener(map, "click", function(event) {
-                        for (var i = 0; i < _infoWindows.length; i++ ) {  //I assume you have your infoboxes in some array
-                     _infoWindows[i].close();
     }
-});
-        });
-        
-
-        
-    }
-
- 
-    /*
-    * @param array of google.maps.Marker objects
-    * @param array of google.maps.InfoWindow objects
-    */
+    _map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: Number(window.venue_beers[0].lat)-.1, lng: Number(window.venue_beers[0].lng)-.3},
+        zoom: 10,
+        disableDefaultUI: true, // a way to quickly hide all controls
+        options: {
+            gestureHandling: 'greedy'
+        }
+    });
     
+    
+    var anchors = {}
+    window.anchors = anchors
+    
+    var cnt = 0
+    for (var v of window.venue_beers){
+        for( var c of window.cans){
+            var nm = c.code;
+            console.log(c.glass)
+            var untappd_bid = /\d*$/.exec(c.untappd);
+            
+            if(nm=="p4p"){continue}
+
+            console.log(nm)
+
+            console.log(untappd_bid)
+            console.log(v.bid)
+            if (v.bid!= untappd_bid){continue}
+            if( !( nm in anchors) ){
+                anchors[nm] = []
+            }
+            
+            cnt +=1;
+            k = cnt;
+            var marker;
+            var infoWindow;
+            var containerDiv = document.createElement('div');
+            containerDiv.className = 'venueWindow';
+            
+            // create headline
+            var header = document.createElement('h4');
+            var checkinText = (v.n_checkins > 1) ? ' Check-ins at ' : ' Check-in at ';
+            header.textContent = v.n_checkins + checkinText + v.venue_name;
+            containerDiv.appendChild(header);  
+
+            console.log("HIHIH", nm)
+            var marker = new google.maps.Marker({
+                id: cnt,
+                clickable: true,
+                isOpen: false,
+                position: new google.maps.LatLng(Number(v.lat), Number(v.lng)),
+                map: _map,
+                visible:false,
+                venue:{
+                    v
+                },
+                icon:getGlassware(c.glass)
+                
+            });
+            
+            _markers.push(marker);
+            
+            console.log(_markers)
+
+            infoWindow = new google.maps.InfoWindow({
+                id: cnt,
+                clickable: true,
+                content: containerDiv,
+                maxWidth: 250,
+                position: new google.maps.LatLng(Number(v.lat),Number( v.lng))
+            });
+            
+            
+            anchors[nm].push( { lat:v.lat, lng:v.lng, venue:v, can:c })
+            
+            //infoWindow.open(_map, marker);
+            _infoWindows.push(infoWindow);
+            
+        }
+        
+        
+    }
+    
+    
+    var packy_anchors = {}
+    window.packy_anchors = packy_anchors
+    var cnt = 0
+    for (var v of window.offprem_can_locations){
+        
+        for( var c of window.cans){
+            continue
+            if(c.code!="p4p"){continue}else{console.log(c)};
+            
+            var nm = c.code;                
+            var untappd_bid = /\d*$/.exec(c.untappd);
+
+
+            if( !( nm in packy_anchors) ){
+                packy_anchors[nm] = []
+            }
+
+
+
+            cnt +=1;
+            k = cnt;
+            var marker;
+            var infoWindow;
+            var containerDiv = document.createElement('div');
+            containerDiv.className = 'venueWindow';
+            
+            // create headline
+            var header = document.createElement('h4');
+            var checkinText = "package store";
+            header.textContent = "unknown checkins";
+            containerDiv.appendChild(header);
+            
+            var marker = new google.maps.Marker({
+                id: cnt,
+                clickable: true,
+                isOpen: false,
+                position: new google.maps.LatLng(Number(v.lat), Number(v.lng)),
+                map: _map,
+                
+                visible:false,
+                packy:{
+                    v
+                },
+                icon:getGift(),
+                
+            });
+            
+            _markers.push(marker);
+            
+            infoWindow = new google.maps.InfoWindow({
+                id: cnt,
+                clickable: true,
+                content: containerDiv,
+                maxWidth: 250,
+                position: new google.maps.LatLng(Number(v.lat),Number( v.lng))
+            });
+            
+            
+            console.log("ADDING TO ANCHORS")
+            packy_anchors[nm].push( { lat:v.lat, lng:v.lng, packy:v, can:c })
+            console.log(packy_anchors)
+            _infoWindows.push(infoWindow);
+        }
+    }
+    
+    setupInfoWindowClose(_markers, _infoWindows);
+    setupMarkerClickEvents(_markers, _infoWindows);
+    
+    
+    var overlay = new google.maps.OverlayView();
+    overlay.draw = function() {};
+    overlay.setMap(_map);
+    
+    var screen_anchors = {}
+    window.screen_anchors = screen_anchors
+    window.anchors = anchors;
+    window.overlay = overlay;
+    window.map = _map;
+    
+    
+    var packy_screen_anchors = {}
+    window.packy_screen_anchors = packy_screen_anchors
+    
+    window.packy_anchors =packy_anchors;
+    
+    
+    
+    google.maps.event.addListenerOnce(_map, 'idle', function(){ 
+        window.createPhysics();
+        google.maps.event.addListener(_map,'bounds_changed', function(){
+            window.updateBounds();
+        })
+        
+        google.maps.event.addListener(_map,'idle', function(){
+            window.updateBounds();
+        })
+        
+        google.maps.event.addListener(_map,'dragstart', function(){
+            window.startDragging();
+        })
+        
+        
+        google.maps.event.addListener(_map,'zoom_changed', function(){
+            window.zoomChanged();
+        })
+        
+        google.maps.event.addListener(_map,'dragend', function(){
+            window.doneDragging();
+        })
+        
+        google.maps.event.addListener(map, "click", function(event) {
+            for (var i = 0; i < _infoWindows.length; i++ ) {  //I assume you have your infoboxes in some array
+                _infoWindows[i].close();
+            }
+        });
+    });
+    
+    
+    
+}
+
+
+
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCK99lIGLXj04Bts-C3nZlcc3HWKvLH6U&callback=initMap"
-async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCK99lIGLXj04Bts-C3nZlcc3HWKvLH6U&callback=initMap" async defer></script>
