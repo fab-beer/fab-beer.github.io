@@ -3,9 +3,18 @@ $offprem-color:#FF1493;
 
 .venueWindow{
     background-color:black;
+
+
+
 }
 
 body.page-find{
+
+    // svg.teku{
+    //     path{
+    //         fill:turquoise;
+    //     }
+    // }
 
     &.noballoons{
 .physics{display:none;}
@@ -399,6 +408,10 @@ nav {
 	width: 250px;
 	height: inherit;
 	overflow: scroll;
+    min-height:300px;
+
+background-color:white;
+
 }
 
 .venueWindow hr {

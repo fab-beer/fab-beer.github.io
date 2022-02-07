@@ -31,24 +31,24 @@
                     if (!this.isOpen) {
                         var t = this;
                         
-                        console.log(
-                        "TODO: re-enable click highlight events"
-                        )
+                        // console.log(
+                        // "TODO: re-enable click highlight events"
+                        // )
                         
                         
                         // TODO uncomment
-                        // window.highlightVenue(t);
+                        window.highlightVenue(t);
                         
                         // TODO debug and uncomment
-                        // var infoWindow = _.find(infoWindowArray, function(w) {
-                            //     return w.id === t.id;
-                            // });
+                        var infoWindow = _.find(infoWindowArray, function(w) {
+                                return w.id === t.id;
+                            });
                             
-                            // if (infoWindow) {
-                                //     infoWindow.open(_map, this);
-                                // }
+                            if (infoWindow) {
+                                    infoWindow.open(_map, this);
+                                }
                                 
-                                //this.isOpen = true;
+                                this.isOpen = true;
                             } 
                         });
                     });
@@ -94,14 +94,14 @@
                     <g><path fill="#FF1493" d="M73.23,25.663h-9.431c1.829-1.444,3.455-3.402,4.787-5.733c4.001-7.001,3.874-14.604-3.129-18.605   C60.218-1.669,54.316,0.765,50,5.113c-4.316-4.348-10.219-6.783-15.458-3.789c-7.002,4.001-7.129,11.604-3.128,18.605   c1.332,2.331,2.958,4.289,4.787,5.733H26.77c-7.698,0-13.938,6.24-13.938,13.938v17.92v10.62v17.921   c0,7.698,6.24,13.938,13.938,13.938h17.92h10.62H73.23c7.698,0,13.938-6.24,13.938-13.938V68.141v-10.62v-17.92   C87.169,31.903,80.929,25.663,73.23,25.663z M18.153,39.601c0-4.751,3.865-8.616,8.616-8.616h17.92v26.537H18.153V39.601z    M26.77,94.678c-4.751,0-8.616-3.865-8.616-8.616V68.141H44.69v26.537H26.77z M81.847,86.062c0,4.751-3.865,8.616-8.616,8.616   H55.31V68.141h26.537V86.062z M55.31,57.521V30.985H73.23c4.751,0,8.616,3.865,8.616,8.616v17.92H55.31z"></path></g></svg>
                     `)
                     
-                    var glass_color="blue"
-                    var glassware_paths = {'teku': btoa(`
-                    <svg version="1.1" id="teku" class="glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+                    var glassware_paths = {'teku': (can)=>btoa(`
+                    <svg version="1.1" id="teku" class="glass ${can.code}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 85.72 188.09" style="enable-background:new 0 0 85.72 188.09;" xml:space="preserve">
                     <g>
                         <g>
                             <g>
-                                <path fill="blue" d="M54.5,172.37l-5.85-4.55l-2.28-5.2l1.3-43.26l7.16-20.82l30.9-21.14L69.46,14.96l2.28-8.78h-6.81H20.8h-6.81l2.28,8.78
+                                <path  fill="${can.fg_color}" d="M54.5,172.37l-5.85-4.55l-2.28-5.2l1.3-43.26l7.16-20.82l30.9-21.14L69.46,14.96l2.28-8.78h-6.81H20.8h-6.81l2.28,8.78
                                 L0,77.41l30.9,21.14l7.16,20.82l1.3,43.26l-2.28,5.2l-5.85,4.55l-20.82,5.85c0,0-2.28,3.58-1.3,3.9
                                 c0.98,0.33,18.21,6.83,33.82,5.85h2.86c15.61,0.98,29.85-5.53,30.82-5.85c0.98-0.33-1.3-3.9-1.3-3.9L54.5,172.37z M18.16,24.67
                                 l1.82-9.54l-1.82-6.36h48.9l-2.73,6.36l3.63,9.54H18.16z"/>
@@ -114,12 +114,12 @@
                 </svg>
                 
                 `),
-                'pilsner':btoa(`
-                <svg version="1.1" id="pilsner" class="glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                'pilsner':(can)=>btoa(`
+                <svg version="1.1" id="pilsner" class="glass ${can.code}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 62.2 167.52" style="enable-background:new 0 0 62.2 167.52;" xml:space="preserve">
                 <g>
                     <g>
-                        <path d="M49.09,124.08C48.6,101.23,62.2,49.67,62.2,29.58c0-8.85-3.44-21.88-3.44-21.88H29.74h-1.9H3.44C3.44,7.7,0,20.73,0,29.58
+                        <path  fill="${can.fg_color}" d="M49.09,124.08C48.6,101.23,62.2,49.67,62.2,29.58c0-8.85-3.44-21.88-3.44-21.88H29.74h-1.9H3.44C3.44,7.7,0,20.73,0,29.58
                         c0,20.09,13.6,71.65,13.11,94.5c-0.49,22.86-10.61,34.09-10.65,36.54c-0.06,4.25,0.74,4.91,6.15,5.9
                         c5.28,0.97,20.48,0.99,21.18,0.99c0.82,0,18.53-0.02,23.81-0.99c5.41-0.99,6.21-1.65,6.15-5.9
                         C59.7,158.17,49.58,146.95,49.09,124.08z M3.1,26.08l2.92-15h50.71l2.29,15H3.1z"/>
@@ -134,8 +134,8 @@
             `)};
             
             function getIcon(name) {
-                console.log("OPENING ICON LOOP")
-                console.log(name == "bf")
+
+
                 return name=="bf" ? {
                     url: 'data:image/svg+xml;charset=UTF-8;base64,' + bf_svg_path,
                     scaledSize: new google.maps.Size(100, 100)
@@ -146,9 +146,12 @@
                 };
             }
             
-            function getGlassware(name){
-                console.log(name)
-                return {url:'data:image/svg+xml;charset=UTF-8;base64,'+  glassware_paths[name],
+
+            function getGlassware(c){
+
+                // console.log('data:image/svg+xml;charset=UTF-8;base64,'+  glassware_paths[c.glass](c))
+
+                return {url:'data:image/svg+xml;charset=UTF-8;base64,'+  glassware_paths[c.glass](c),
             scaledSize: new google.maps.Size(20,20)
             }
         }
@@ -172,17 +175,17 @@
     
     var cnt = 0
     for (var v of window.venue_beers){
+
+        if(
+            (Date.now() - Date.parse(v.last_checkin)) / (1000*1000*60*24)  >  30
+            ){ continue}
+
+
         for( var c of window.cans){
             var nm = c.code;
-            console.log(c.glass)
+
+
             var untappd_bid = /\d*$/.exec(c.untappd);
-            
-            if(nm=="p4p"){continue}
-
-            console.log(nm)
-
-            console.log(untappd_bid)
-            console.log(v.bid)
             if (v.bid!= untappd_bid){continue}
             if( !( nm in anchors) ){
                 anchors[nm] = []
@@ -201,7 +204,7 @@
             header.textContent = v.n_checkins + checkinText + v.venue_name;
             containerDiv.appendChild(header);  
 
-            console.log("HIHIH", nm)
+
             var marker = new google.maps.Marker({
                 id: cnt,
                 clickable: true,
@@ -209,16 +212,16 @@
                 position: new google.maps.LatLng(Number(v.lat), Number(v.lng)),
                 map: _map,
                 visible:false,
+                can:c,
                 venue:{
                     v
                 },
-                icon:getGlassware(c.glass)
+                icon:getGlassware(c),
                 
             });
             
             _markers.push(marker);
-            
-            console.log(_markers)
+
 
             infoWindow = new google.maps.InfoWindow({
                 id: cnt,
@@ -244,7 +247,7 @@
     window.packy_anchors = packy_anchors
     var cnt = 0
     for (var v of window.offprem_can_locations){
-        
+
         for( var c of window.cans){
             continue
             if(c.code!="p4p"){continue}else{console.log(c)};

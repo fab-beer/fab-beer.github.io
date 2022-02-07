@@ -1,0 +1,12 @@
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body class="page-{{page.id}} {% if page.style %}style-{{page.style}}{% endif %} {% if page.inverted %} inverted {% endif %}"> 
+    
+    
+    {{ content }}
+
+
+</body>
+</html>

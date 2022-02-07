@@ -3,13 +3,13 @@
 import fill_untappd
 import yaml, json, sqlite3,  dateparser,os, sys
 from pprint import pprint
-from airtable import Airtable
+# from airtable import Airtable
 import pandas as pd
 
 
 def main():
     fill_untappd.run()
-    conn = sqlite3.connect("untappd.db")
+    conn = sqlite3.connect("./db/untappd.db")
     df = pd.read_sql_query("select * from checkins;", conn)
     jsons  = df.json.apply(lambda j: json.loads(j))
 
@@ -45,6 +45,14 @@ def main():
 
 
     cans = pd.read_csv("../_data/cans.csv")
+
+    for i, r in cans.iterrows():
+        s = yaml.dump(r.to_dict(), default_flow_style=False)
+        with open(f"../_cans/{r.code}.md","w") as f:
+            f.write("---\n"),
+            f.write(s)
+            f.write("\n---\n")
+
     cans["untappd_id"] = cans.untappd.str.extract('(\d*$)').astype(int)
 
     venue_beers_annotated = venues_annotated.loc[lambda x: x.venue_id.notna()]

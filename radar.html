@@ -1,0 +1,31 @@
+---
+title: minimum wage art
+layout: radar_layout
+id: radar
+---    
+
+
+{% include radar_spinner.svg %}
+<div class="hud">
+{%for c in site.cans %}
+<div class="beer-container {{c.code}} neon">
+    <div class="{{c.code}} neon border glass-container">
+    {% if c.glass == 'teku' %}
+    {% include glass_svgs/teku.svg %}
+    {% elsif c.glass == 'pilsner' %}
+    {% include glass_svgs/pilsner.svg %}
+    {% elsif c.glass == 'teku' %}
+    {% include glass_svgs/teku.svg %}
+    {% endif %}
+
+
+
+    <span class="neon">
+<h1 class="neonText">
+    {{c.code}}
+</h1>
+</span>
+</div>
+</div>
+{% endfor %}
+</div>

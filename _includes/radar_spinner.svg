@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet href="radar-object.css" type="text/css"?>
+<!-- The stylesheet only works for object embed -->
+<!-- viewBox attribute only required for object embed -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="radar svg" id="radar" viewBox="0 0 34 34">
+
+    <defs>
+        <linearGradient id="base-circle-grad" y2="100%">
+            <stop class="stop-fade" offset="0%"/>
+            <stop class="stop-hot" offset="100%" />
+        </linearGradient>
+        <pattern id="conical-grad-image" width="17" height="17" patternUnits="userSpaceOnUse">
+            <image width="17" height="17" xlink:href="https://i.imgur.com/EJHwQ8Z.png"/>
+        </pattern>
+        <clipPath id="scan-scissors">
+            <polygon points="0 0, 17 0, 17 17, -17 17, -17 0"/>
+        </clipPath>
+        <clipPath id="scan-fade-scissors">
+            <polygon points="0 0, -17 0, -17 -17, 0 -17"/>
+        </clipPath>
+        <clipPath id="clip">
+      <!-- <path fill="white" d="M 50 0 a 50 50 0 0 1 0 100 50 50 0 0 1 0 -100 v 8 a 42 42 0 0 0 0 84 42 42 0 0 0 0 -84" /> -->
+      <!-- <circle fill="white" r="17"></circle> -->
+
+          <circle cx="17" cy="17" r="17" />
+    </clipPath>
+
+
+    </defs>
+
+    <g transform="translate(17, 17)">
+
+
+
+        <circle fill="url(#base-circle-grad)" r="16"/>
+        <circle class="ring filled" r="2"/>
+        <circle class="ring" r="7.1"/>
+        <circle class="ring" r="12.2"/>
+        <circle class="blip filled" r="1.5" cx="4.60" transform="rotate(50)"/>
+        <circle class="blip" r="1.5" cx="9.75" transform="rotate(78)"/>
+        <circle class="blip" r="1.5" cx="9.75" transform="rotate(154)"/>
+        <circle class="blip" r="1.5" cx="14.90" transform="rotate(332)"/>
+        <circle class="blip" r="1.5" cx="14.90" transform="rotate(188)"/>
+        <circle class="blip filled" r="1.5" cx="14.90" transform="rotate(21)"/>
+
+        <g class="cover">
+            <g clip-path="url(#scan-scissors)">
+                <circle class="scan" r="17"/>
+                <circle class="ring filled" r="2"/>
+                <circle class="ring" r="7.1"/>
+                <circle class="ring" r="12.2"/>
+            </g>
+            <g clip-path="url(#scan-fade-scissors)">
+                <!-- <circle class="scan-fade" fill=url(#conical-grad-image) r="17" /> -->
+        <foreignObject x="-17" y="-17" width="34" height="34" clip-path="url(#clip)">
+                <div class="scan-fade gradient" xmlns="http://www.w3.org/1999/xhtml" ></div>
+            </foreignObject>
+
+                <circle class="ring filled" r="2"/>
+                <circle class="ring" r="7.1"/>
+                <circle class="ring" r="12.2"/>
+            </g>
+        </g>
+
+        <line class="radar-line" x2="16"/>
+</g>
+
+</svg>

@@ -2,6 +2,41 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+
+{% for can in site.cans %}
+
+${{can.code}}-bg-color:{{can.bg_color}};
+${{can.code}}-fg-color:{{can.fg_color}};
+
+.{{can.code}}{
+    fill:{{can.bg_color}};
+}
+
+
+.{{can.code}} .neonText{
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px {{can.fg_color}},
+        0 0 82px  {{can.fg_color}},
+        0 0 92px {{can.fg_color}},
+        0 0 102px  {{can.fg_color}},
+        0 0 151px  {{can.fg_color}};
+}
+.{{can.code}} .neon.border {
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem  lighten({{can.bg_color}},5%),
+        0 0 0.8rem  {{can.bg_color}},
+        // 0 0 2.8rem  {{can.bg_color}},  // a little too bright
+        inset 0 0 1.3rem {{can.bg_color}};
+}
+
+
+{% endfor %}
+
+
 // Imports
 @import "shared";
 @import "main";
@@ -22,3 +57,4 @@
 @import "generic";
 @import "labs";
 @import "qr";
+@import "radar";
