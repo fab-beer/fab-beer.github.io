@@ -177,6 +177,14 @@ $radar-faded-gradient:$radar-active-color;
         
         
     }
+
+.coming-soon{
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:50px;
+    // margin-top:400px;
+}
     
     // .marvel.neonText{
         //     text-shadow:
@@ -198,6 +206,8 @@ $radar-faded-gradient:$radar-active-color;
             //         inset 0 0 1.3rem  $marvel-fg-color
             // }
             
+
+
             
             
             .neonText {
@@ -234,6 +244,15 @@ $radar-faded-gradient:$radar-active-color;
                 //           0 0 0.8rem  $marvel-fg-color,
                 //           0 0 2.8rem  $marvel-fg-color,
                 //           inset 0 0 1.3rem  $marvel-fg-color;
+            }
+            .coming-soon{
+                .neonText{
+                    // font-family:Sacramento;
+                    font-family: Sacramento;
+                    text-transform: none;
+                                    // animation: pulsate 2s infinite alternate;  
+
+                }
             }
             .neonText:hover{
                 // animation: pulsate 2s infinite alternate;  
