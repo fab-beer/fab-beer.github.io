@@ -35,7 +35,7 @@ fg_color: '#270091'
 glass: pilsner
 head_graphic: .nan
 last_brewed: 7-Jan
-layout: can-p4p
+layout: can
 merch_types: prints, sold by the artists
 name: Pilsner 4 Peace
 price_tier: 1
